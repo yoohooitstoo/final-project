@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-
+const books = require("./routes/books");
+const users = require("./routes/users");
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -10,6 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("client/build"));
+// Add routes, both API and view
+app.use("/api/books", books);
+
+app.use("/api/users", users)
 
 app.get("/api/config", (req, res) => {
   res.json({
