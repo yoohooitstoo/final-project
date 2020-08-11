@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { bookSchema } = require("./book");
 const jwt = require("jsonwebtoken");
+const Schema = mongoose.Schema;
 
 
 const userSchema =  new mongoose.Schema({
@@ -29,9 +30,12 @@ const userSchema =  new mongoose.Schema({
         required: true,
         minlength: 1
     },
-    ownedBooks: {
-        type: [bookSchema],
-    }
+    ownedBooks: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: "Book"
+        }
+    ]
 })
 
 

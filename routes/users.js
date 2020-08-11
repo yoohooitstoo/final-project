@@ -12,8 +12,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  User.findById(req.params.id).then((user) => {
-    res.json(user);
+  User.findById(req.params.id).populate("ownedBooks").then((user) => {
+    res.json(user)
   });
 });
 
@@ -40,27 +40,10 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-      console.log("Made it here")
-    const book = await Book.findById(req.body.bookId);
-    console.log("book", book);
-    console.log(req.body.name);
-    if (!book) return res.status(404).send("Unable To Find Book");
+    console.log("Made it here");
     let user = await User.findByIdAndUpdate(
       req.params.id,
-      {
-        name: req.body.name,
-        username: req.body.username,
-        email: req.body.email,
-        zipCode: req.body.zipCode,
-        password: req.body.password,
-        ownedBooks: {
-          title: book.title,
-          authors: book.authors,
-          description: book.description,
-          image: book.image,
-          link: book.link,
-        },
-      },
+      {$push: {ownedBooks: req.body.bookId}}, 
       { new: true }
     );
     console.log(user);

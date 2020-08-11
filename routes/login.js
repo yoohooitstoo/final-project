@@ -6,9 +6,8 @@ const router = express.Router();
 // posting a login - validates an existing user and logs them in
 router.post("/", async(req, res) => {
     try {
-        console.log("made it here");
-        const user = User.findOne({email: req.body.email});
-        if (!user) return res.send(400).send("Invalid email or password");
+        const user = await User.findOne({email: req.body.email})
+        if (!user) return res.send(400).send("Invalid email or password")
         console.log(user);
         // valid password, plan text password the user enters compared to hashed password, returns a boolean
         const validPassword = await bcrypt.compare(
