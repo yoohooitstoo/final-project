@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState} from "react";
 import axios from "axios";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+// import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
-function App() {
+const App = () => {
+  
   useEffect(() => {
     axios
       .get("/api/config")
@@ -13,9 +14,12 @@ function App() {
         console.log(err);
       });
   }, []);
+
+
+  // if there's no user, show the login form
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+     
     </div>
   );
 }
