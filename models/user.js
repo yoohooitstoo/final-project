@@ -7,27 +7,27 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minlength: 1,
+    minlength: 4,
   },
   username: {
     type: String,
     required: true,
-    minlength: 1,
+    minlength: 4,
   },
   email: {
     type: String,
     required: true,
-    minlength: 1,
+    minlength: 8,
   },
   zipCode: {
     type: Number,
     required: true,
-    minlength: 1,
+    minlength: 5,
   },
   password: {
     type: String,
     required: true,
-    minlength: 1,
+    minlength: 8,
   },
   ownedBooks: [
     {
