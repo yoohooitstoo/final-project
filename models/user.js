@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+const { bookSchema } = require("./book");
+const jwt = require("jsonwebtoken");
 
-const User = mongoose.model("users", new mongoose.Schema({
+
+const userSchema =  new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -26,6 +29,21 @@ const User = mongoose.model("users", new mongoose.Schema({
         required: true,
         minlength: 1
     },
-}))
+    ownedBooks: {
+        type: [bookSchema],
+    }
+})
+
+
+userSchema.methods.generateAuthToken = function () {
+    const token = jwt.sign(
+        { _id: this._id, username: this.username },
+        "jwt=myPRIVATEKEY"
+        // process.env.JWT_PRIVATEKEY - add when deployed
+    )
+    return token;
+}
+
+const User = mongoose.model("User", userSchema)
 
 module.exports.User = User;
