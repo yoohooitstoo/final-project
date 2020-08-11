@@ -23,6 +23,9 @@ router.post("/", async(req, res) => {
         description: req.body.description,
         image: req.body.image,
         link: req.body.link,
+        owner: req.body.owner,
+        currentRenter: req.body.currentRenter,
+        requesters: req.body.requesters,
     });
     await book.save();
     res.json(book);
