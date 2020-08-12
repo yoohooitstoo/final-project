@@ -24,7 +24,7 @@ const App = () => {
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
-        < Route exact path= "/singup" component={SignUp} />
+        < Route exact path= "/signup" component={SignUp} />
       </div>
     </Router>
   );

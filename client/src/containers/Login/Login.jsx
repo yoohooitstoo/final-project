@@ -4,7 +4,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                Hello world
+                hello world
             </div>
         );
     }
