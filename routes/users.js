@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
   User.find().then((users) => {
+    console.log("made it here", users)
     res.json(users);
   });
 });
@@ -28,7 +29,7 @@ router.post("/", async (req, res) => {
       zipCode: req.body.zipCode,
       password: req.body.password,
       ownedBooks: req.body.ownedBooks,
-      renting: req.body
+      renting: req.body.renting
     });
     // sale and hash password using bcrypt
     const salt = await bcrypt.genSalt(10);
