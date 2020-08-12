@@ -4,6 +4,7 @@ import axios from "axios";
 import Home from "./containers/Home/Home.jsx"
 import Login from "./containers/Login/Login.jsx";
 import SignUp from "./containers/SignUp/SignUp.jsx";
+import Browse from "./containers/Browse/Browse.jsx";
 // import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
         < Route exact path= "/signup" component={SignUp} />
+        < Route exact path= "/browse" component={Browse} />
       </div>
     </Router>
   );
