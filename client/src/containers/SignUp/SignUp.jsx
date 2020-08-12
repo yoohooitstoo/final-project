@@ -1,9 +1,10 @@
+
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/User";
 
-const SignUp = (props) => {
+const SignUp = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [zipCode, setZipCode] = useState("");
@@ -15,7 +16,7 @@ const user = useContext(UserContext);
 const handleSubmit = (e) => {
   e.preventDefault();
   axios
-    .post("/api/users", {
+    .post("/api/users/signup", {
       username: username,
       email: email,
       zipCode: zipCode,
@@ -24,7 +25,6 @@ const handleSubmit = (e) => {
     .then((response) => {
       console.log(response.data);
       user.handleSignUp(response.data.data);
-      console.log(user.handleSignUp)
     })
     .catch((err) => {
       console.log(err);
@@ -32,11 +32,13 @@ const handleSubmit = (e) => {
 };
 
 // class SignUp (props) extends Component {
-  // render() {
+//   render() {
     return (
       <div className="container">
+        <h1>Hello</h1>
+
         <div className="notification">
-          <div className="form" onSubmit = {handleSubmit}>
+          <form onSubmit = {handleSubmit}>
           <div className="field">
             <label className="label">Username</label>
             <div className="control has-icons-left has-icons-right">
@@ -113,8 +115,8 @@ const handleSubmit = (e) => {
               <button className="button is-link">Home</button>
             </Link>
           </div>
-          </div>
-        </div>
+          </form>
+        </div> 
       </div>
     );
 };
