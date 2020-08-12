@@ -27,6 +27,8 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       zipCode: req.body.zipCode,
       password: req.body.password,
+      ownedBooks: req.body.ownedBooks,
+      renting: req.body.renting
     });
     // sale and hash password using bcrypt
     const salt = await bcrypt.genSalt(10);
@@ -38,12 +40,27 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/own/:id", async (req, res) => {
   try {
     console.log("Made it here");
     let user = await User.findByIdAndUpdate(
       req.params.id,
       {$push: {ownedBooks: req.body.bookId}}, 
+      { new: true }
+    );
+    console.log(user);
+    res.json(user)
+  } catch (ex) {
+    res.json(ex);
+  }
+});
+
+router.put("/rent/:id", async (req, res) => {
+  try {
+    console.log("Made it here");
+    let user = await User.findByIdAndUpdate(
+      req.params.id,
+      {$push: {renting: req.body.bookId}}, 
       { new: true }
     );
     console.log(user);

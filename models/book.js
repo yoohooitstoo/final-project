@@ -28,13 +28,13 @@ const bookSchema = new mongoose.Schema({
         minlength: 1
     },
     owner: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
-        minlength: 2
+        ref: "User"
     }, 
     currentRenter: {
-        type: String,
-        minlength: 2
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }, 
     requesters: [
         {
