@@ -22,13 +22,13 @@ router.post("/", async (req, res) => {
       let user = await User.findOne({email: req.body.email});
       if(user) return res.status(400).send("This Email is Already Registered")
       user = new User({
-      name: req.body.name,
+      // name: req.body.name,
       username: req.body.username,
       email: req.body.email,
       zipCode: req.body.zipCode,
       password: req.body.password,
       ownedBooks: req.body.ownedBooks,
-      renting: req.body.renting
+      renting: req.body
     });
     // sale and hash password using bcrypt
     const salt = await bcrypt.genSalt(10);
