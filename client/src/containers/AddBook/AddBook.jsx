@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "bulma/css/bulma.css";
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
 
@@ -37,25 +36,25 @@ class AddBook extends Component {
     return (
       <div>
 
-        <div class="section">
-          <div class="box" id="searchBox">
-            <div class="field">
-              <label class="label">Search</label>
-              <div class="control has-icons-left">
+        <div className="section">
+          <div className="box" id="searchBox">
+            <div className="field">
+              <label className="label">Search</label>
+              <div className="control has-icons-left">
                 <input 
-                  class="input" 
+                  className="input" 
                   type="text" 
                   placeholder="Title..."
                   value= {this.state.searchValue}
                   onChange= {this.handleSearch}
                 />
-                <span class="icon is-small is-left">
-                    <i class="fas fa-book"></i>
+                <span className="icon is-small is-left">
+                    <i className="fas fa-book"></i>
                 </span>
               </div>
             </div>
             <button
-              class="button is-inverted is-outlined"
+              className="button is-inverted is-outlined"
               onClick={this.handleSearchAPI}
             >
               Search
