@@ -31,7 +31,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/mern-starter", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/bookunityDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
