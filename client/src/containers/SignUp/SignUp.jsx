@@ -42,7 +42,7 @@ class SignUp extends Component {
           <div className="field is-grouped is-grouped-centered">
             <p className="control">
               <Link to="/account">
-                <button className="button is-primary">Login</button>
+                <button className="button is-primary">Sign Up</button>
               </Link>
             </p>
           
