@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import "./Browse.css"
-import "bulma/css/bulma.css"
+import "bulma/css/bulma.css";
+import bulma from 'bulma';
+import "./Browse.css";
 // import bulmaCarousel from "bulma-carousel";
 
 // import PropTypes from 'prop-types';
