@@ -13,7 +13,7 @@ class AddBook extends Component {
     searchValue: '',
     booksSearched: [],
   };
-  handleSearch = (event) => {\
+  handleSearch = (event) => {
     
     this.setState({ searchValue: event.currentTarget.value });
   };
