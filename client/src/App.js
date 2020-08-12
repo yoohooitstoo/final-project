@@ -18,7 +18,6 @@ const App = () => {
         console.log(err);
       });
   }, []);
-
   // if there's no user, show the login form
   return (
     <Router>

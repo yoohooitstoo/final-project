@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
   User.find().then((users) => {
+    console.log("made it here", users)
     res.json(users);
   });
 });
@@ -22,7 +23,7 @@ router.post("/", async (req, res) => {
       let user = await User.findOne({email: req.body.email});
       if(user) return res.status(400).send("This Email is Already Registered")
       user = new User({
-      name: req.body.name,
+      // name: req.body.name,
       username: req.body.username,
       email: req.body.email,
       zipCode: req.body.zipCode,
