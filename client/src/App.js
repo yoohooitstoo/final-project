@@ -26,7 +26,7 @@ const App = () => {
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
         < Route exact path= "/signup" component={SignUp} />
-        < Route exact path= "/browse" component={AddBook} />
+        < Route exact path= "/addbook" component={AddBook} />
         < Route exact path= "/account" component={Account} />
       </div>
     </Router>

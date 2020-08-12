@@ -1,5 +1,3 @@
-@import "/node_modules/bulma/css/bulma.css";
-
 body {
-  background-image: "https://github.com/JaredP17/final-project/blob/592aa153202df8925123a3c0780f33848f4fa7a9/client/public/bookcase_bg.png";
+  background-image: "../../../public/bookcase_bg.png";
 }
