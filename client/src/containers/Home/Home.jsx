@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div className="container ">
       <div className="notification">
+          <h1>This is the Home Page.</h1>
         <div className="buttons">
           <Link to="/login">
             <button className="button is-primary">Login</button>
