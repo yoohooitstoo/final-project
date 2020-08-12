@@ -27,11 +27,11 @@ class Login extends Component {
             </p>
           </div>
           <div className="field">
-            <p className="control">
-            <Link to="/account">
-            <button className="button is-primary">Login</button>
-          </Link>
-            </p>
+            <div className="buttons">
+              <Link to="/account">
+                <button className="button is-primary">Login</button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="buttons">
