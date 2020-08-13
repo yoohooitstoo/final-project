@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import UserContext from "../../utils/User";
+
 
 // class Login extends Component {
 const Login = (props) => {
   const [email, setEmail] =useState("");
   const [password, setPassword] = useState("");
 
+const user = useContext(UserContext);
+
 const handleSubmit = (e) => {
   e.preventDefault();
-  console.log("you clicked submit");
+  // console.log("you clicked submit");
   axios
   .post("/api/login", {
     email: email,
@@ -17,13 +21,16 @@ const handleSubmit = (e) => {
   })
   .then((response) => {
     console.log(response.data);
-    
+    user.handleLogin(response.data.data);
     //redirect to account page
+    // window.location.href="/account";
+    props.history.push("/account")
   })
   .catch((err) => {
     console.log(err);
   });
 }
+
 
   // render() {
     return (
