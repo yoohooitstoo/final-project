@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
+import BookInfo from '../../components/BookInfo';
 
 
 // import PropTypes from 'prop-types';
@@ -35,7 +36,7 @@ class AddBook extends Component {
   render() {
     return (
       <div>
-
+        <BookInfo />
         <div className="section">
           <div className="box" id="searchBox">
             <div className="field">
@@ -66,6 +67,7 @@ class AddBook extends Component {
         </div>
 
       </div>
+      
     );
   }
 }

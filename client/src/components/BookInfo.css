@@ -1,0 +1,12 @@
+.card-image {
+border: 1px solid #ddd;
+border-radius: 5px;
+padding:5px;
+width: 300px;
+height:450px;
+};
+
+#bookCard {
+  max-width: 500px;
+  max-height: 100%;
+}
