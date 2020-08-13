@@ -2,8 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const routes = require("./routes");
-// const books = require("./routes/api/books");
-const users = require("./routes/users");
 const app = express();
 const login = require("./routes/login");
 
@@ -14,21 +12,9 @@ app.use(express.json());
 
 app.use(express.static("client/build"));
 // Add routes, both API and view
-// app.use(routes);
-
-app.use("/api/users", users);
+app.use(routes);
 
 app.use("/api/login", login);
-
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
-});
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/mern-starter", {

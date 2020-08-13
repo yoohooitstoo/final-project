@@ -45,8 +45,6 @@ class AddBook extends Component {
   render() {
     return (
       <div>
-
-
         <div className="section">
           <div className="box" id="searchBox">
             <div className="field">
@@ -74,7 +72,6 @@ class AddBook extends Component {
         </div>
 
         <div className="section">
-
         <div className="jumbotron">
           {this.state.booksSearched.map((book) => (
             <div className="jumbotron">
@@ -95,7 +92,7 @@ class AddBook extends Component {
                 </div>
               </div>
               <div className="row">
-                <div className= "col-sm-3"><img src={book.image}/></div>
+                <div className= "col-sm-3"><img src={book.image} alt="bookcover"/></div>
                 <div className="col-sm-9">{book.description}</div>
               </div>
             </div>
