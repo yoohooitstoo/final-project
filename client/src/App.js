@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./containers/Home/Home.jsx";
 import Login from "./containers/Login/Login.jsx";
 import SignUp from "./containers/SignUp/SignUp.jsx";
+import AddBook from "./containers/AddBook/AddBook.jsx";
 import Account from "./containers/Account/Account.jsx";
 // import StatusContext from "./utils/Status";
 import UserContext from "./utils/User";
@@ -46,15 +47,15 @@ function App() {
     <Router>
     <Switch>
         <UserContext.Provider value={{ jwt, handleLogin }}>
-          <div className="App">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path = "/addbook" component={AddBook} />
-            <Route exact path="/account" component={Account}/>
-          </div>
-        </UserContext.Provider>
-    </Switch>
+      <div className="App">
+        < Route exact path= "/" component={Home} />
+        < Route exact path= "/login" component={Login} />
+        < Route exact path= "/signup" component={SignUp} />
+        < Route exact path= "/addbook" component={AddBook} />
+        < Route exact path= "/account" component={Account} />
+      </div>
+      </UserContext.Provider>
+      </Switch>
     </Router>
   );
 }
