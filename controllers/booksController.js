@@ -18,9 +18,19 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    db.Book.findByIdAndUpdate
+    db.Book.findByIdAndUpdate(
+      req.params.id,
+      { $push: { requesters: req.body.userId } },
+      { new: true }
+    )
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
   },
   remove: function (req, res) {
-
-  }
+    db.Book.findByIdAndRemove(req.params.id)
+      .then((dbModel) => {
+        res.json(dbModel);
+      })
+      .catch((err) => res.status(422).json(err));
+  },
 };
