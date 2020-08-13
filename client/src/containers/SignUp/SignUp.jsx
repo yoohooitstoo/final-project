@@ -8,7 +8,6 @@ const SignUp = (props) => {
   const [email, setEmail] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [password, setPassword] = useState("");
-
   // const user = useContext(UserContext);
 
   const handleSubmit = (e) => {
@@ -23,8 +22,8 @@ const SignUp = (props) => {
       })
       .then((response) => {
         console.log(response.data);
-        // user.handleSignUp(response.data.data);
-        // <Redirect push to="/account" /> 
+        // window.location.href="/account";
+        props.history.push("/account");
       })
       .catch((err) => {
         console.log(err);

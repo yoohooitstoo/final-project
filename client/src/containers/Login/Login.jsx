@@ -23,6 +23,8 @@ const handleSubmit = (e) => {
     console.log(response.data);
     user.handleLogin(response.data.data);
     //redirect to account page
+    // window.location.href="/account";
+    props.history.push("/account")
   })
   .catch((err) => {
     console.log(err);
