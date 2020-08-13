@@ -7,6 +7,7 @@ import SignUp from "./containers/SignUp/SignUp.jsx";
 import Account from "./containers/Account/Account.jsx";
 // import StatusContext from "./utils/Status";
 import UserContext from "./utils/User";
+import AddBook from "./containers/BookInfo/BookInfo";
 
 // import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
@@ -49,6 +50,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path = "/addbook" component={AddBook} />
             <Route exact path="/account" component={Account}/>
           </div>
         </UserContext.Provider>
