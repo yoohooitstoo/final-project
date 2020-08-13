@@ -1,8 +1,11 @@
 import React from "react";
 
-const StatusContext = React.createContext({
+
+const statusContext = React.createContext({
   jwt: "",
   setJwt: () => {}
 });
 
-export default StatusContext;
+
+
+export default statusContext

@@ -13,7 +13,7 @@ const user = useContext(UserContext);
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  console.log("you clicked submit");
+  // console.log("you clicked submit");
   axios
   .post("/api/login", {
     email: email,
@@ -23,6 +23,8 @@ const handleSubmit = (e) => {
     console.log(response.data);
     user.handleLogin(response.data.data);
     //redirect to account page
+    // window.location.href="/account";
+    props.history.push("/account")
   })
   .catch((err) => {
     console.log(err);
