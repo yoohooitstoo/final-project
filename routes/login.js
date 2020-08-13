@@ -19,7 +19,16 @@ router.post("/", async(req, res) => {
         return res.status(400).send("Invalid email or password");
         //generate authorization token from schema method in user.js
         const token = user.generateAuthToken();
-        res.header("x-auth-token", token).send(token);
+        res.header("x-auth-token", token).json(
+            {
+                success: true,
+                data: {
+                    _id: user._id,
+                    token: token
+                },
+                message: "Successfully authenticated user."
+            }
+        );
     } catch (error) {
         res.json(error)
     }

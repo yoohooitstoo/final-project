@@ -20,10 +20,10 @@ const Login = (props) => {
       })
       .then((response) => {
         console.log(response.data);
-        user.handleLogin(response.data.data);
+        user.handleLogin(response.data.data.token, response.data.data._id);
         //redirect to account page
         // window.location.href="/account";
-        props.history.push("/account");
+        props.history.push(`/account/${response.data.data._id}`);
       })
       .catch((err) => {
         console.log(err);

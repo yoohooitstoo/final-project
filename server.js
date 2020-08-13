@@ -12,9 +12,10 @@ app.use(express.json());
 
 app.use(express.static("client/build"));
 // Add routes, both API and view
+app.use("/api/login", login);
 app.use(routes);
 
-app.use("/api/login", login);
+
 
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/mern-starter", {

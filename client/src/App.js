@@ -25,14 +25,17 @@ function App() {
   // if there's no user, show the login form
 
   const [jwt, setJwt] = useState("");
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
     handleStartup();
   }, []);
 
-  const handleLogin = (token) => {
+  const handleLogin = (token, _id) => {
     setJwt(token);
+    setUserId(_id)
     window.localStorage.setItem("jwt", token);
+    window.localStorage.setItem("_id", _id)
   };
 
   const handleStartup = () => {
@@ -51,7 +54,7 @@ function App() {
         < Route exact path= "/login" component={Login} />
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook" component={AddBook} />
-        < Route exact path= "/account" component={Account} />
+        < Route exact path= "/account/:id" component={Account} />
       </div>
       </UserContext.Provider>
       </Switch>
