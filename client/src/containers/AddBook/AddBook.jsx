@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
-
-
+// import axios from "axios";
+import { saveBook } from "../../services/bookService";
 // import PropTypes from 'prop-types';
 // import Search from 'client/src/components/Search.js';
-
 
 class AddBook extends Component {
   state = {
@@ -32,9 +31,21 @@ class AddBook extends Component {
     this.setState({ booksSearched: booksSearched });
   };
 
+  saveBook = async(book) => {
+    try {
+        console.log(book);
+    const result = await saveBook(book.title, book.authors, book.description, book.image, book.link)
+    console.log(result); 
+    alert("You saved this book!")
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
     return (
       <div>
+
 
         <div className="section">
           <div className="box" id="searchBox">
@@ -61,15 +72,39 @@ class AddBook extends Component {
             </button>
           </div>
         </div>
-        <div>
-      
-        </div>
 
-      </div>
+        <div className="section">
+
+        <div className="jumbotron">
+          {this.state.booksSearched.map((book) => (
+            <div className="jumbotron">
+              <div className="row">
+                <div className="col d-flex justify-content-around">
+                  <div>{book.title}</div>
+                  <div>
+                    <button className="btn btn-secondary">
+                      View
+                    </button>
+                    <button className="btn btn-primary" onClick= {() => this.saveBook(book)}>Add to Library</button>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col d-flex justify-content-start">
+                  Written By: {book.authors}
+                </div>
+              </div>
+              <div className="row">
+                <div className= "col-sm-3"><img src={book.image}/></div>
+                <div className="col-sm-9">{book.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        </div>
+        </div>
     );
   }
 }
-
-
 
 export default AddBook;

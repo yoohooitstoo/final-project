@@ -3,44 +3,42 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/User";
 
-
 // class Login extends Component {
 const Login = (props) => {
-  const [email, setEmail] =useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-const user = useContext(UserContext);
+  const user = useContext(UserContext);
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  // console.log("you clicked submit");
-  axios
-  .post("/api/login", {
-    email: email,
-    password: password,
-  })
-  .then((response) => {
-    console.log(response.data);
-    user.handleLogin(response.data.data);
-    //redirect to account page
-    // window.location.href="/account";
-    props.history.push("/account")
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-}
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log("you clicked submit");
+    axios
+      .post("/api/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        console.log(response.data);
+        user.handleLogin(response.data.data);
+        //redirect to account page
+        // window.location.href="/account";
+        props.history.push("/account");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   // render() {
-    return (
-      <div className="container">
-        <div className="notification">
-          <form onSubmit = {handleSubmit}>
+  return (
+    <div className="container">
+      <div className="notification">
+        <form onSubmit={handleSubmit}>
           Login Page that will take the user to their account
           <div className="field">
             <p className="control has-icons-left has-icons-right">
-            <input
+              <input
                 className="input"
                 id="email"
                 type="email"
@@ -61,7 +59,7 @@ const handleSubmit = (e) => {
           </div>
           <div className="field">
             <p className="control has-icons-left">
-            <input
+              <input
                 className="input"
                 id="password"
                 type="password"
@@ -79,19 +77,20 @@ const handleSubmit = (e) => {
           </div>
           <div className="field">
             <div className="buttons">
-                <button className="button is-primary" type="submit">Login</button>
+              <button className="button is-primary" type="submit">
+                Login
+              </button>
             </div>
           </div>
-        <div className="buttons">
-          <Link to="/">
-            <button className="button is-primary">Home</button>
-          </Link>
-
-        </div>
-             </form>
-  </div>
+          <div className="buttons">
+            <Link to="/">
+              <button className="button is-primary">Home</button>
+            </Link>
+          </div>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
+};
 
 export default Login;
