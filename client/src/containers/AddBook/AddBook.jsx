@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Search from 'client/src/components/Search.js';
+import { searchResults } from "../../services/apiService";
+import "./AddBook.css";
 
-class Browse extends Component {
+
+// import PropTypes from 'prop-types';
+// import Search from 'client/src/components/Search.js';
+
+
+class AddBook extends Component {
   state = {
     searchValue: '',
     booksSearched: [],
   };
   handleSearch = (event) => {
+    
     this.setState({ searchValue: event.currentTarget.value });
   };
   handleSearchAPI = async () => {
@@ -17,8 +23,9 @@ class Browse extends Component {
     data.items.forEach((value, index) => {
       const authors = value.volumeInfo.authors;
       const title = value.volumeInfo.title;
+      const rating = value.volumeInfo.averageRating;
       const image = value.volumeInfo.imageLinks.thumbnail;
-      const object = { authors, title, description, image, link };
+      const object = { authors, title, rating, image };
       console.log(object);
       booksSearched.push(object);
     });
@@ -28,37 +35,41 @@ class Browse extends Component {
   render() {
     return (
       <div>
-        <Nav />
-        <div class="section">
-          <div class="box" id="searchBox">
-            <div class="field">
-              <label class="Search"></label>
-              <div class="control has-icons-left">
+
+        <div className="section">
+          <div className="box" id="searchBox">
+            <div className="field">
+              <label className="label">Search</label>
+              <div className="control has-icons-left">
                 <input 
-                  class="input" 
+                  className="input" 
                   type="text" 
                   placeholder="Title..."
-                >
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-book"></i>
-                  </span>
-                </input>
+                  value= {this.state.searchValue}
+                  onChange= {this.handleSearch}
+                />
+                <span className="icon is-small is-left">
+                    <i className="fas fa-book"></i>
+                </span>
               </div>
             </div>
             <button
-              class="button is-inverted is-outlined"
+              className="button is-inverted is-outlined"
               onClick={this.handleSearchAPI}
             >
               Search
             </button>
           </div>
         </div>
-        <div class="section">{/* carousel of search results here */}</div>
+        <div>
+      
+        </div>
+
       </div>
     );
   }
 }
 
-Browse.propTypes = {};
 
-export default Browse;
+
+export default AddBook;
