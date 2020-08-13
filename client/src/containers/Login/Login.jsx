@@ -13,7 +13,7 @@ const user = useContext(UserContext);
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  console.log("you clicked submit");
+  // console.log("you clicked submit");
   axios
   .post("/api/login", {
     email: email,

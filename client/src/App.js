@@ -7,7 +7,6 @@ import SignUp from "./containers/SignUp/SignUp.jsx";
 import Account from "./containers/Account/Account.jsx";
 // import StatusContext from "./utils/Status";
 import UserContext from "./utils/User";
-import ProtectedRoute from "../../client/src/components/ProtectedRoute";
 
 // import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
