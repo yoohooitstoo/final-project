@@ -1,32 +1,29 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import API from "../../utils/API.js";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import API from '../../utils/API.js';
 
 class Account extends Component {
-state= {
-  ownedBooks: [],
-  renting: [],
-}
+  state = {
+    ownedBooks: [],
+    renting: [],
+  };
 
-   // Make an axios call to get the User 
-    // on the User route, make sure we call .populate("books")
-    // on a successful call return, set the books on state.
-    // map through the books array and display them on the page. 
-  componentDidMount(){
+  // Make an axios call to get the User
+  // on the User route, make sure we call .populate("books")
+  // on a successful call return, set the books on state.
+  // map through the books array and display them on the page.
+  componentDidMount() {
     console.log(this.props.match.params.id);
     API.getOwnedBooks(this.props.match.params.id)
-    .then(res => {
-      console.log("Owned Books", res.data.ownedBooks);
-       console.log("Renting", res.data.renting)
-      const ownedBooks = res.data.ownedBooks;
-      const renting = res.data.renting;
-    this.setState({ownedBooks: ownedBooks, renting: renting});
+      .then((res) => {
+        console.log('Owned Books', res.data.ownedBooks);
+        console.log('Renting', res.data.renting);
+        const ownedBooks = res.data.ownedBooks;
+        const renting = res.data.renting;
+        this.setState({ ownedBooks: ownedBooks, renting: renting });
+      })
+      .catch((err) => console.log(err));
   }
-    )
-    .catch(err => console.log(err));
-}
-
- 
 
   render() {
     return (
@@ -34,9 +31,7 @@ state= {
         <div className="notification has-background-warning-dark">
           <div className="buttons is-right">
             <Link to="/">
-              <button className="button is-primary">
-                Log Out
-              </button>
+              <button className="button is-primary">Log Out</button>
             </Link>
           </div>
           <div className="tile is-ancestor">
@@ -64,7 +59,9 @@ state= {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <Link to={`/addbook/${this.props.match.params.id}`}><p className="title has-text-centered">Add Book</p></Link>
+                <Link to={`/addbook/${this.props.match.params.id}`}>
+                  <p className="title has-text-centered">Add Book</p>
+                </Link>
               </div>
             </div>
           </div>
@@ -93,7 +90,10 @@ state= {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-               <Link to="/addbooks"> <p className="title has-text-centered"> Add Renting</p></Link>
+                <Link to="/addbooks">
+                  {' '}
+                  <p className="title has-text-centered"> Add Renting</p>
+                </Link>
               </div>
             </div>
           </div>

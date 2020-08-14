@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
 ///testing bookinfo component
-import BookInfo from '../../components/BookInfo/BookInfo';
+// import BookInfo from '../../components/BookInfo/BookInfo';
 
 
 // import axios from "axios";
@@ -10,6 +10,7 @@ import { saveBook } from "../../services/bookService";
 // import PropTypes from 'prop-types';
 // import Search from 'client/src/components/Search.js';
 import API from "../../utils/API.js";
+import BookInfo from '../../components/BookInfo/BookInfo';
 
 class AddBook extends Component {
   state = {
@@ -53,7 +54,7 @@ class AddBook extends Component {
   render() {
     return (
       <div>
-        <BookInfo />
+        < BookInfo />
         <div className="section">
           <div className="box" id="searchBox">
             <div className="field">

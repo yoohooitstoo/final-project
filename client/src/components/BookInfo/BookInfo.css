@@ -14,3 +14,7 @@ height:450px;
 .image {
   justify-content: center;
 }
+
+#bookcover-modal {
+  margin: 0px auto;
+}

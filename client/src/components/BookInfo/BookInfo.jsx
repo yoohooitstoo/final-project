@@ -11,7 +11,7 @@ const BookInfo = () => {
           <button className="delete" aria-label="close"></button>
         </header>
         <section className="modal-card-body">
-          <img className= "image is-centered" src="https://placekitten.com/300/450" alt="Placeholder bookcover" />
+          <img className= "image" src="https://placekitten.com/300/450" alt="Placeholder bookcover" id="bookcover-modal" />
           <p className="title is-3">Book Title</p>
           <p className="subtitle is-5">Author</p>
           <p>Description of book, limit character count to something reasonable. No
@@ -24,7 +24,7 @@ const BookInfo = () => {
 
         </section>
         <footer className="modal-card-foot">
-          <button className="button is-success">Save changes</button>
+          <button className="button is-success">Add to Library</button>
           <button className="button">Cancel</button>
         </footer>
       </div>
