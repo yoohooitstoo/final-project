@@ -51,7 +51,7 @@ class Main extends Component {
           <div class="tile is-ancestor">
             <div class="tile is-parent image">
               <figure class="image is-3by2">
-                <img src="https://placekitten.com/200/300"/>
+                <img src="https://placekitten.com/200/300" alt="dumb"/>
               </figure>
             </div>
             <div class="tile is-parent">

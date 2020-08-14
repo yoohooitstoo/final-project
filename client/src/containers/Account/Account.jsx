@@ -50,10 +50,10 @@ class Account extends Component {
 
           <div className="tile is-ancestor">
             <div className="tile is-parent">
-              <div className="tile is-child box">
-                {this.state.ownedBooks.map((book) => (
+              <div className="tile is-child box" >
+                {this.state.ownedBooks.map((book) => (   
                   <img src={book.image} alt="" className="mx-4" />
-                ))}
+                  ))}
               </div>
             </div>
           </div>
