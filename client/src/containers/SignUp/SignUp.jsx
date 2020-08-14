@@ -23,7 +23,7 @@ const SignUp = (props) => {
       .then((response) => {
         console.log(response.data);
         // window.location.href="/account";
-        props.history.push("/account");
+        props.history.push(`/account/${response.data._id}`);
       })
       .catch((err) => {
         console.log(err);

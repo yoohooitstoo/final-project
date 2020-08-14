@@ -10,21 +10,28 @@ router
   .route("/:id")
   .get(booksController.findById)
   .put(booksController.update)
-  .delete(booksController.remove);
+  .delete(booksController.remove)
+  // .post(booksController.update);
 
 
-router.put("/owns/:id", async (req, res) => {
-  try {
-    console.log("Made it here");
-    let book = await Book.findByIdAndUpdate(req.params.id, {
-      owner: req.body.owner,
-    });
-    console.log(book);
-    res.json(book);
-  } catch (ex) {
-    res.json(ex);
-  }
-});
+// router.put("/owns/:id", async (req, res) => {
+//   try {
+//   let book = new Book({
+//     title: req.body.title,
+//     authors: req.body.authors,
+//     description: req.body.description,
+//     image: req.body.image,
+//     link: req.body.link,
+//     owner: req.params.id,
+//     currentRenter: null,
+//     requester: null
+//   })
+//   const savedBook = await book.save()
+//   console.log(savedBook)
+//   } catch (ex) {
+//     res.json(ex);
+//   }
+// });
 
 router.put("/renting/:id", async (req, res) => {
   try {

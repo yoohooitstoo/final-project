@@ -1,9 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-
+import API from "../../utils/API.js";
 
 class Account extends Component {
+state= {
+  ownedBooks: [],
+  renting: [],
+}
+
+   // Make an axios call to get the User 
+    // on the User route, make sure we call .populate("books")
+    // on a successful call return, set the books on state.
+    // map through the books array and display them on the page. 
+  componentDidMount(){
+    console.log(this.props.match.params.id);
+    API.getOwnedBooks(this.props.match.params.id)
+    .then(res => {
+      console.log("Owned Books", res.data.ownedBooks);
+       console.log("Renting", res.data.renting)
+      const ownedBooks = res.data.ownedBooks;
+      const renting = res.data.renting;
+    this.setState({ownedBooks: ownedBooks, renting: renting});
+  }
+    )
+    .catch(err => console.log(err));
+}
+
+ 
+
   render() {
     return (
       <div className="container is-fluid">
@@ -40,7 +64,7 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
+                <Link to={`/addbook/${this.props.match.params.id}`}><p className="title has-text-centered">Add Book</p></Link>
               </div>
             </div>
           </div>
@@ -69,7 +93,7 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
+               <Link to="/addbooks"> <p className="title has-text-centered"> Add Renting</p></Link>
               </div>
             </div>
           </div>
