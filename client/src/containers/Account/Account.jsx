@@ -16,8 +16,8 @@ class Account extends Component {
     console.log(this.props.match.params.id);
     API.getOwnedBooks(this.props.match.params.id)
       .then((res) => {
-        console.log('Owned Books', res.data.ownedBooks);
-        console.log('Renting', res.data.renting);
+        console.log("Owned Books", res.data.ownedBooks);
+        console.log("Renting", res.data.renting);
         console.log(res.data);
         const ownedBooks = res.data.ownedBooks;
         const renting = res.data.renting;
@@ -35,6 +35,11 @@ class Account extends Component {
               <button className="button is-primary">Log Out</button>
             </Link>
           </div>
+          <div className="buttons is-left">
+          <Link to={`/addbook/${this.props.match.params.id}`}>
+              <button className="buttons is-primary">Add Book</button>
+            </Link>
+          </div>
           <div className="tile is-ancestor">
             <div className="tile is-parent">
               <div className="tile is-child box">
@@ -42,27 +47,13 @@ class Account extends Component {
               </div>
             </div>
           </div>
+
           <div className="tile is-ancestor">
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
-              </div>
-            </div>
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
-              </div>
-            </div>
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
-              </div>
-            </div>
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <Link to={`/addbook/${this.props.match.params.id}`}>
-                  <p className="title has-text-centered">Add Book</p>
-                </Link>
+                {this.state.ownedBooks.map((book) => (
+                  <img src={book.image} alt="" className="mx-4" />
+                ))}
               </div>
             </div>
           </div>
@@ -92,7 +83,7 @@ class Account extends Component {
             <div className="tile is-parent">
               <div className="tile is-child box">
                 <Link to="/addbooks">
-                  {' '}
+                  {" "}
                   <p className="title has-text-centered"> Add Renting</p>
                 </Link>
               </div>
