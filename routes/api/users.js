@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { User } = require("../../models/user");
-const { response } = require("express");
-const { Book } = require("../../models/book");
+const User = require("../../models/user");
+const Book = require("../../models/book");
 const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
@@ -19,24 +18,29 @@ router.get("/:id", (req, res) => {
   });
 });
 
+// router.post("/", (req, res) => {
+// User.create(req.body).then(newUser => (res.json(newUser)))
+// })
+
+
 router.post("/", async (req, res) => {
   try {
+    console.log("made it here")
       let user = await User.findOne({email: req.body.email});
       if(user) return res.status(400).send("This Email is Already Registered")
-      user = new User({
+      const newUser = new User({
       // name: req.body.name,
       username: req.body.username,
       email: req.body.email,
       zipCode: req.body.zipCode,
       password: req.body.password,
-      ownedBooks: req.body.ownedBooks,
-      renting: req.body.renting
-    });
-    // sale and hash password using bcrypt
+    })
+    // salt and hash password using bcrypt
+    console.log(newUser);
     const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(user.password, salt)
-    await user.save();
-    res.json(user);
+    newUser.password = await bcrypt.hash(newUser.password, salt)
+    await newUser.save();
+    res.json(newUser);
   } catch (ex) {
     res.json(ex);
   }
@@ -56,11 +60,11 @@ router.put("/own/:id", async (req, res) => {
     res.json(ex);
   }
 });
-
+//saves the book to the suer
 router.put("/added/:id", async (req, res) => {
   try {
-    // console.log(req.body.requester);
-    let book = new Book({
+    // console.log(req.body)
+  const savedBook = await Book.create({
     title: req.body.title,
     authors: req.body.authors,
     description: req.body.description,
@@ -70,9 +74,11 @@ router.put("/added/:id", async (req, res) => {
     currentRenter: null,
     requester: null
   });
-  console.log(title);
-  const savedBook = await book.save();
-  console.log(savedBook);
+  // console.log(savedBook);
+  const updatedUser = await
+  User.findByIdAndUpdate(req.params.id, {$push: {ownedBooks: savedBook._id}}, {new: true});
+  res.json(updatedUser);
+  // res.json(savedBook);
   } catch (ex) {
     res.json(ex);
   }

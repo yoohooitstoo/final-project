@@ -36,6 +36,7 @@ class AddBook extends Component {
     console.log(this.props.match.params.id)
     API.addOwnedBook(this.props.match.params.id)
     .then(res => {
+      console.log(saveBook);
       console.log(res.data);
 
 

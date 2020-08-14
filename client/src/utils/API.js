@@ -7,7 +7,7 @@ export default {
     },
     addOwnedBook: function(id) {
         console.log(id)
-        return axios.put(`http://localhost:3000/api/users/own/${id}`)
+        return axios.put(`http://localhost:3000/api/users/added/${id}`)
         //may have to change to 3001 to avoid cors policy!!!
     },
     deleteOwnedBook: function(id) {
