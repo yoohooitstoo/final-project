@@ -25,7 +25,7 @@ function App() {
   // if there's no user, show the login form
 
   const [jwt, setJwt] = useState("");
-  const [userId, setUserId] = useState("");
+  const [_id, setUserId] = useState("");
 
   useEffect(() => {
     handleStartup();
@@ -48,12 +48,12 @@ function App() {
   return (
     <Router>
     <Switch>
-        <UserContext.Provider value={{ jwt, handleLogin }}>
+        <UserContext.Provider value={{ jwt, _id, handleLogin }}>
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
         < Route exact path= "/signup" component={SignUp} />
-        < Route exact path= "/addbook" component={AddBook} />
+        < Route exact path= "/addbook/:id" component={AddBook} />
         < Route exact path= "/account/:id" component={Account} />
       </div>
       </UserContext.Provider>
