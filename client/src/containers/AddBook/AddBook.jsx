@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
-import BookInfo from '../../components/BookInfo';
+import BookInfo from '../../components/BookInfo/BookInfo';
 
 
 // import PropTypes from 'prop-types';
