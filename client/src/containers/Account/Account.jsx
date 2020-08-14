@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import API from "../../utils/API.js";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import API from '../../utils/API.js';
 
 class Account extends Component {
   state = {
