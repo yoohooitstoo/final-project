@@ -5,6 +5,7 @@ import "./AddBook.css";
 import { saveBook } from "../../services/bookService";
 // import PropTypes from 'prop-types';
 // import Search from 'client/src/components/Search.js';
+import API from "../../utils/API.js";
 
 class AddBook extends Component {
   state = {
@@ -31,15 +32,17 @@ class AddBook extends Component {
     this.setState({ booksSearched: booksSearched });
   };
 
-  saveBook = async(book) => {
-    try {
-        console.log(book);
-    const result = await saveBook(book.title, book.authors, book.description, book.image, book.link)
-    console.log(result); 
-    alert("You saved this book!")
-    } catch (error) {
-      console.log(error)
-    }
+  saveBook() {
+    console.log(this.props.match.params.id)
+    API.addOwnedBook(this.props.match.params.id)
+    .then(res => {
+      console.log(res.data);
+
+
+    //   console.log(res.data._id)
+    //  this.props.history.push(`/account/${res.data._id}`);
+    })
+    .catch(err => console.log(err));
   }
 
   render() {

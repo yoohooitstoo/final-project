@@ -53,7 +53,7 @@ function App() {
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
         < Route exact path= "/signup" component={SignUp} />
-        < Route exact path= "/addbook" component={AddBook} />
+        < Route exact path= "/addbook/:id" component={AddBook} />
         < Route exact path= "/account/:id" component={Account} />
       </div>
       </UserContext.Provider>

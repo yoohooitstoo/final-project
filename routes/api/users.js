@@ -57,6 +57,27 @@ router.put("/own/:id", async (req, res) => {
   }
 });
 
+router.put("/added/:id", async (req, res) => {
+  try {
+    // console.log(req.body.requester);
+    let book = new Book({
+    title: req.body.title,
+    authors: req.body.authors,
+    description: req.body.description,
+    image: req.body.image,
+    link: req.body.link,
+    owner: req.params.id,
+    currentRenter: null,
+    requester: null
+  });
+  console.log(title);
+  const savedBook = await book.save();
+  console.log(savedBook);
+  } catch (ex) {
+    res.json(ex);
+  }
+});
+
 router.put("/rent/:id", async (req, res) => {
   try {
     console.log("Made it here");
