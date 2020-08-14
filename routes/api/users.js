@@ -63,7 +63,7 @@ router.put("/own/:id", async (req, res) => {
 //saves the book to the suer
 router.put("/added/:id", async (req, res) => {
   try {
-    // console.log(req.body)
+    console.log(req.body)
   const savedBook = await Book.create({
     title: req.body.title,
     authors: req.body.authors,
