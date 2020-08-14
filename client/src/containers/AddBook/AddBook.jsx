@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
 // import axios from "axios";
@@ -9,11 +9,10 @@ import API from "../../utils/API.js";
 
 class AddBook extends Component {
   state = {
-    searchValue: '',
+    searchValue: "",
     booksSearched: [],
   };
   handleSearch = (event) => {
-    
     this.setState({ searchValue: event.currentTarget.value });
   };
   handleSearchAPI = async () => {
@@ -25,7 +24,10 @@ class AddBook extends Component {
       const title = value.volumeInfo.title;
       const description = value.volumeInfo.description;
       const rating = value.volumeInfo.averageRating;
-      const image = value.volumeInfo.imageLinks.thumbnail;
+      const image =
+        value.volumeInfo.imageLinks !== undefined
+          ? value.volumeInfo.imageLinks.thumbnail
+          : "https://via.placeholder.com/150/cecece/000000/?text=No+Thumbnail";
       const link = value.volumeInfo.link;
       const object = { authors, title, description, rating, image, link };
       console.log(object);
@@ -35,14 +37,14 @@ class AddBook extends Component {
   };
 
   saveBook(book) {
-  console.log(this.props.match.params.id)
+    console.log(this.props.match.params.id);
     API.addOwnedBook(this.props.match.params.id, book)
-    .then(res => {
-      console.log(res);
-      console.log(res.data._id)
-    this.props.history.push(`/account/${res.data._id}`);
-    })
-    .catch(err => console.log(err));
+      .then((res) => {
+        console.log(res);
+        console.log(res.data._id);
+        this.props.history.push(`/account/${res.data._id}`);
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -53,15 +55,15 @@ class AddBook extends Component {
             <div className="field">
               <label className="label">Search</label>
               <div className="control has-icons-left">
-                <input 
-                  className="input" 
-                  type="text" 
+                <input
+                  className="input"
+                  type="text"
                   placeholder="Title..."
-                  value= {this.state.searchValue}
-                  onChange= {this.handleSearch}
+                  value={this.state.searchValue}
+                  onChange={this.handleSearch}
                 />
                 <span className="icon is-small is-left">
-                    <i className="fas fa-book"></i>
+                  <i className="fas fa-book"></i>
                 </span>
               </div>
             </div>
@@ -75,34 +77,39 @@ class AddBook extends Component {
         </div>
 
         <div className="section">
-        <div className="jumbotron">
-          {this.state.booksSearched.map((book) => (
-            <div className="jumbotron">
-              <div className="row">
-                <div className="col d-flex justify-content-around">
-                  <div>{book.title}</div>
-                  <div>
-                    <button className="btn btn-secondary">
-                      View
-                    </button>
-                    <button className="btn btn-primary" onClick= {() => this.saveBook(book)}>Add to Library</button>
+          <div className="jumbotron">
+            {this.state.booksSearched.map((book) => (
+              <div className="jumbotron">
+                <div className="row">
+                  <div className="col d-flex justify-content-around">
+                    <div>{book.title}</div>
+                    <div>
+                      <button className="btn btn-secondary">View</button>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => this.saveBook(book)}
+                      >
+                        Add to Library
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col d-flex justify-content-start">
-                  Written By: {book.authors}
+                <div className="row">
+                  <div className="col d-flex justify-content-start">
+                    Written By: {book.authors}
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-3">
+                    <img src={book.image} alt="bookcover" />
+                  </div>
+                  <div className="col-sm-9">{book.description}</div>
                 </div>
               </div>
-              <div className="row">
-                <div className= "col-sm-3"><img src={book.image} alt="bookcover"/></div>
-                <div className="col-sm-9">{book.description}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
     );
   }
 }
