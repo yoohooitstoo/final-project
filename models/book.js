@@ -4,32 +4,32 @@ const Schema = mongoose.Schema;
 const bookSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true,
+        // required: true,
         minlength: 1
     },
     authors: {
         type: [String],
-        required: true, 
+        // required: true, 
         minlength: 1
     },
     description: {
         type: String,
-        required: true,
+        // required: true,
         minlength: 1
     },
     image: {
         type: String,
-        required: true,
+        // required: true,
         minlength: 1
     },
     link: {
         type: String,
-        required: true,
+        // required: true,
         minlength: 1
     },
     owner: {
         type: Schema.Types.ObjectId,
-        required: true,
+        // required: true,
         ref: "User"
     }, 
     currentRenter: {

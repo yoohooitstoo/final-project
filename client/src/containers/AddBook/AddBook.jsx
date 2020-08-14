@@ -23,25 +23,24 @@ class AddBook extends Component {
     data.items.forEach((value, index) => {
       const authors = value.volumeInfo.authors;
       const title = value.volumeInfo.title;
+      const description = value.volumeInfo.description;
       const rating = value.volumeInfo.averageRating;
       const image = value.volumeInfo.imageLinks.thumbnail;
-      const object = { authors, title, rating, image };
+      const link = value.volumeInfo.link;
+      const object = { authors, title, description, rating, image, link };
       console.log(object);
       booksSearched.push(object);
     });
     this.setState({ booksSearched: booksSearched });
   };
 
-  saveBook() {
-    console.log(this.props.match.params.id)
-    API.addOwnedBook(this.props.match.params.id)
+  saveBook(book) {
+  console.log(this.props.match.params.id)
+    API.addOwnedBook(this.props.match.params.id, book)
     .then(res => {
-      console.log(saveBook);
-      console.log(res.data);
-
-
-    //   console.log(res.data._id)
-    //  this.props.history.push(`/account/${res.data._id}`);
+      console.log(res);
+      console.log(res.data._id)
+    this.props.history.push(`/account/${res.data._id}`);
     })
     .catch(err => console.log(err));
   }

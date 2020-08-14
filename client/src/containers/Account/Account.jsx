@@ -18,6 +18,7 @@ state= {
     .then(res => {
       console.log("Owned Books", res.data.ownedBooks);
        console.log("Renting", res.data.renting)
+       console.log(res.data);
       const ownedBooks = res.data.ownedBooks;
       const renting = res.data.renting;
     this.setState({ownedBooks: ownedBooks, renting: renting});
