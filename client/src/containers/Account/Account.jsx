@@ -1,15 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import axios from "axios";
+import API from "../../utils/API.js";
+
 class Account extends Component {
+state= {
+  ownedBooks: [],
+  renting: [],
+}
 
   componentDidMount(){
     console.log(this.props.match.params.id);
-    // Make an axios call to get the User
+    API.getOwnedBooks(this.props.match.params.id)
+    .then(res => {
+      console.log("Owned Books", res.data.ownedBooks);
+       console.log("Renting", res.data.renting)
+      const ownedBooks = res.data.ownedBooks;
+      const renting = res.data.renting;
+    this.setState({ownedBooks: ownedBooks, renting: renting});
+  }
+    )
+    .catch(err => console.log(err));
+}
+
+    // Make an axios call to get the User 
     // on the User route, make sure we call .populate("books")
     // on a successful call return, set the books on state.
     // map through the books array and display them on the page. 
-  }
 
   render() {
     return (

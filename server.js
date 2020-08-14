@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//Allows us access to our DB cross-origin
+app.use(function(req,res,next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+})
 
 app.use(express.static("client/build"));
 // Add routes, both API and view

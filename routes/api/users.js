@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  console.log("Made it here", req.params.id);
   User.findById(req.params.id).populate("ownedBooks").then((user) => {
     res.json(user)
   });
