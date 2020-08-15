@@ -10,11 +10,16 @@ class Account extends Component {
     show: false
   };
 
-  showModal = e => {
+  toggleModal = e => {
     this.setState({
       show: true
     });
+    console.log("you clicked")
   };
+
+  onClose = e => {
+    this.props.onClose && this.props.onClose(e);
+  }
   // Make an axios call to get the User
   // on the User route, make sure we call .populate("books")
   // on a successful call return, set the books on state.
@@ -60,8 +65,8 @@ class Account extends Component {
               <div className="tile is-child box">
                 {this.state.ownedBooks.map((book) => (
                   <>
-                  <img src={book.image} alt="" className="mx-4" onClick={e =>{ this.showModal();}} />
-                  < BookInfo show={this.state.show} />
+                  <img src={book.image} alt="" className="mx-4" onClick={e =>{ this.toggleModal();}} />
+                  < BookInfo show={this.state.show} onClose={this.showModal} toggleModal={this.toggleModal} title={book.title} image= {book.image} author={book.author}  />
                   </>
                 ))}
               </div>
