@@ -8,87 +8,38 @@ class Main extends Component {
       // Navbar component
       <div className="container">
         <div className="columns is-full bookrow">
-          <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">One</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Two</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Three</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Four</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Four</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Four</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+            </figure>
+            <p class="title">One</p>
           </div>
-        </div>
-        <div className="columns is-full bookrow">
-          <div class="tile is-ancestor">
-            <div class="tile is-parent image">
-              <figure class="image is-3by2">
-                <img src="https://placekitten.com/200/300"/>
-              </figure>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Two</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Three</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Four</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Four</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Four</p>
-                <p class="subtitle">Subtitle</p>
-              </article>
-            </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+            </figure>
+            <p class="title">One</p>
           </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+            </figure>
+            <p class="title">One</p>
+          </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+            </figure>
+            <p class="title">One</p>
+          </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://bulmal;.!@##$$$$Rlo '
         </div>
       </div>
     );
   }
 }
 
-export default Main;
+export default Main;q1m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     rt
+
