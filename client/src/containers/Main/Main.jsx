@@ -7,39 +7,67 @@ class Main extends Component {
     return (
       // Navbar component
       <div className="container">
-        <div className="columns is-full bookrow">
+        <div className="columns bookrow">
+          <div class="column"></div>
           <div class="column">
+            {/* //Book Cover from database */}
             <figure class="image is-320x480">
-              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+              <img src="https://placekitten.com/320/480" />
             </figure>
+            {/* //Book title from database */}
             <p class="title">One</p>
           </div>
           <div class="column">
             <figure class="image is-320x480">
-              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+              <img src="https://placekitten.com/320/480" />
             </figure>
-            <p class="title">One</p>
+            <p class="title">Two</p>
           </div>
           <div class="column">
             <figure class="image is-320x480">
-              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+              <img src="https://placekitten.com/320/480" />
             </figure>
-            <p class="title">One</p>
+            <p class="title">Three</p>
           </div>
           <div class="column">
             <figure class="image is-320x480">
-              <img src="https://bulma.io/images/placeholders/320x480.png"/>
+              <img src="https://placekitten.com/320/480" />
             </figure>
-            <p class="title">One</p>
+            <p class="title">Four</p>
+          </div>
+          <div class="column"></div>
+        </div>
+        <div className="columns bookrow">
+          <div class="column"></div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://placekitten.com/320/480" />
+            </figure>
+            <p class="title">Five</p>
           </div>
           <div class="column">
             <figure class="image is-320x480">
-              <img src="https://bulmal;.!@##$$$$Rlo '
+              <img src="https://placekitten.com/320/480" />
+            </figure>
+            <p class="title">Six</p>
+          </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://placekitten.com/320/480" />
+            </figure>
+            <p class="title">Seven</p>
+          </div>
+          <div class="column">
+            <figure class="image is-320x480">
+              <img src="https://placekitten.com/320/480" />
+            </figure>
+            <p class="title">Eight</p>
+          </div>
+          <div class="column"></div>
         </div>
       </div>
     );
   }
 }
 
-export default Main;q1m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     rt
-
+export default Main;

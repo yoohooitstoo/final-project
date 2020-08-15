@@ -19,9 +19,9 @@ const Login = (props) => {
         password: password,
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.config);
         user.handleLogin(response.data.data.token, response.data.data._id);
-        //redirect to account page
+        // redirect to account page
         // window.location.href="/account";
         props.history.push(`/account/${response.data.data._id}`);
       })
