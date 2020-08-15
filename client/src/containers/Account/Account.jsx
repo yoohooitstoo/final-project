@@ -52,7 +52,9 @@ class Account extends Component {
             <div className="tile is-parent">
               <div className="tile is-child box" >
                 {this.state.ownedBooks.map((book) => (   
+                  <Link to= "/bookinfo">
                   <img src={book.image} alt="" className="mx-4" />
+                  </Link>
                   ))}
               </div>
             </div>

@@ -1,13 +1,15 @@
 import React from 'react';
 import './BookInfo.css';
 
-const BookInfo = () => {
+const BookInfo = (props) => {
   return (
     <div className="modal is-active">
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
-          <p className="modal-card-title">About this book</p>
+  <p className="modal-card-title" style = {{
+    title: props.title ? `${props.title}`: "title"
+  }}>About this book </p>
           <button className="delete" aria-label="close"></button>
         </header>
         <section className="modal-card-body">
@@ -15,7 +17,7 @@ const BookInfo = () => {
           <p className="title is-3">Book Title</p>
           <p className="subtitle is-5">Author</p>
           <p>Description of book, limit character count to something reasonable. No
-            more than two lines. Just enought to be sure you're looking at the
+            more than two lines. Just enough to be sure you're looking at the
             right book.</p> 
           <br/>
           <p>
