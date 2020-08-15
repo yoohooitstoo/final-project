@@ -1,9 +1,12 @@
-import React from 'react';
-import './BookInfo.css';
+import React, { Component } from 'react';
 
-const BookInfo = () => {
-  return (
-    <div className="modal is-active">
+class BookInfo extends Component {
+  render() {
+    if (!this.props.show){
+      return null;
+    }
+    return (
+      <div className="modal is-active">
       <div className="modal-background"></div>
       <div className="modal-card">
         <header className="modal-card-head">
@@ -29,7 +32,8 @@ const BookInfo = () => {
         </footer>
       </div>
     </div>
-  );
-};
+    );
+  }
+}
 
 export default BookInfo;
