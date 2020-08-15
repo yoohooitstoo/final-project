@@ -49,7 +49,7 @@ class Account extends Component {
           </div>
           <div className="buttons is-left">
             <Link to={`/addbook/${this.props.match.params.id}`}>
-              <button className="buttons is-primary">Add Book</button>
+              <button className="button is-primary">Add Book</button>
             </Link>
           </div>
           <div className="tile is-ancestor">
@@ -131,9 +131,9 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <Link to="/addbooks">
+                <Link to="/main">
                   {" "}
-                  <p className="title has-text-centered"> Add Renting</p>
+                  <button className="button is-primary has-text-centered"> Add Renting</button>
                 </Link>
               </div>
             </div>
