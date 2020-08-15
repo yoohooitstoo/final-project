@@ -18,4 +18,8 @@ export default {
         console.log(id)
         return axios.put(`http://localhost:3001/api/books/renting/${id}`);
     },
+    getAllOwnedBooks: function() {
+        console.log("hello")
+        return axios.get("http://localhost:3001/api/books")
+    }
 }
