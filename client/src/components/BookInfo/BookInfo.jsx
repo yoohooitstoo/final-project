@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 
 class BookInfo extends Component {
-  render(props) {
+
+  onClick = e => {
+    this.props.show = false;
+  }
+
+  render() {
     if (!this.props.show){
       return null;
     }
     return (
       <div className="modal is-active">
-      <div className="modal-background"></div>
+      {/* <div className="modal-background"></div> */}
       <div className="modal-card">
         <header className="modal-card-head">
-  <p className="modal-card-title" style = {{
-    title: props.title ? `${props.title}`: "title"
-  }}>About this book </p>
-          <button className="delete" aria-label="close"></button>
+          <p className="modal-card-title">{this.props.title} </p>
+          <button className="delete" aria-label="close" onClick={e => {this.onClose(e)}} ></button>
         </header>
         <section className="modal-card-body">
           <img className= "image" src="https://placekitten.com/300/450" alt="Placeholder bookcover" id="bookcover-modal" />
@@ -30,7 +33,7 @@ class BookInfo extends Component {
         </section>
         <footer className="modal-card-foot">
           <button className="button is-success">Add to Library</button>
-          <button className="button">Cancel</button>
+          <button className="button">Remove Button</button>
         </footer>
       </div>
     </div>
