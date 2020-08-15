@@ -55,7 +55,6 @@ class AddBook extends Component {
   render() {
     return (
       <div>
-        < BookInfo />
         <div className="section">
           <div className="box" id="searchBox">
             <div className="field">
