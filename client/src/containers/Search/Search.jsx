@@ -19,6 +19,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -35,6 +36,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -51,6 +53,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -67,6 +70,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -83,6 +87,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -106,6 +111,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -122,6 +128,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -138,6 +145,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -154,6 +162,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
@@ -170,6 +179,7 @@ class Search extends Component {
                   ))} */}
                   <img
                     src="https://placekitten.com/320/480"
+                    alt="kitten"
                     className="hoverpic"
                   />
                   <div className="middle">
