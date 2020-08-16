@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import "./BookInfo.css"
+import API from "../../utils/API";
 
 class BookInfo extends Component {
   book = this.props.book;
+
+deleteBook(book) {
+  console.log(book._id)
+  API.deleteOwnedBook(book._id)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => console.log(err));
+}
   render() {
     return (
       <div className="modal is-active">
@@ -29,12 +39,12 @@ class BookInfo extends Component {
               <strong>Description:</strong> {this.book.description}
             </p>
             <br />
-            <p>
+            {/* <p>
               <strong>Rating:</strong> X/X
-            </p>
+            </p> */}
           </section>
           <footer className="modal-card-foot">
-            <button className="button is-danger">Remove from Library</button>
+            <button className="button is-danger" onClick={() =>this.deleteBook}>Remove from Library</button>
             {/* <button className="button">Remove Button</button> */}
           </footer>
         </div>

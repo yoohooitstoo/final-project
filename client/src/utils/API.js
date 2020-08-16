@@ -12,7 +12,7 @@ export default {
     },
     deleteOwnedBook: function(id) {
         console.log(id)
-        return axios.delete(`http://localhost:3001/api/users/${id}`)
+        return axios.delete(`http://localhost:3001/api/books/${id}`)
     },
     requestToRent: function(id, userId) {
         console.log(id)
