@@ -17,7 +17,7 @@ export default {
     requestToRent: function(id, userId) {
         console.log(id)
         console.log(userId)
-        return axios.put(`http://localhost:3000/api/books/${id}`, userId);
+        return axios.put(`http://localhost:3000/api/books/${id}`, {userId: userId});
     },
     getAllOwnedBooks: function() {
         console.log("hello")
