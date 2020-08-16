@@ -122,7 +122,7 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <Link to="/main">
+                <Link to={`/main/${this.props.match.params.id}`}>
                   {" "}
                   <button className="button is-primary has-text-centered">
                     {" "}
