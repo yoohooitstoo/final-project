@@ -1,25 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API.js";
-import BookInfo from "../../components/BookInfo/BookInfo.jsx";
+import Book from "../../components/Book/Book";
+
 
 class Account extends Component {
   state = {
     ownedBooks: [],
     renting: [],
-    show: false
   };
 
-  toggleModal = e => {
-    this.setState({
-      show: true
-    });
-    console.log("you clicked")
-  };
-
-  onClose = e => {
-    this.props.onClose && this.props.onClose(e);
-  }
   // Make an axios call to get the User
   // on the User route, make sure we call .populate("books")
   // on a successful call return, set the books on state.
@@ -64,10 +54,11 @@ class Account extends Component {
             <div className="tile is-parent">
               <div className="tile is-child box">
                 {this.state.ownedBooks.map((book) => (
-                  <>
-                  <img src={book.image} alt="" className="mx-4" onClick={e =>{ this.toggleModal();}} />
-                  < BookInfo show={this.state.show} onClose={this.showModal} toggleModal={this.toggleModal} title={book.title} image= {book.image} author={book.author}  />
-                  </>
+                  <Book book={book} />
+                  // <>
+                  // <img src={book.image} alt={book.title} className="mx-4" onClick={e =>{ this.toggleModal();}} />
+
+                  // </>
                 ))}
               </div>
             </div>
@@ -87,7 +78,7 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <p className="title has-text-centered" >Click here for modal</p>
+                <p className="title has-text-centered">Click here for modal</p>
                 <div className="modal">
                   <div className="modal-background"></div>
                   <div className="modal-card">
@@ -106,7 +97,7 @@ class Account extends Component {
                       <p className="subtitle is-5">Author</p>
                       <p>
                         Description of book, limit character count to something
-                        reasonable. No more than two lines. Just enought to be
+                        reasonable. No more than two lines. Just enough to be
                         sure you're looking at the right book.
                       </p>
                       <br />
@@ -133,7 +124,10 @@ class Account extends Component {
               <div className="tile is-child box">
                 <Link to={`/main/${this.props.match.params.id}`}>
                   {" "}
-                  <button className="button is-primary has-text-centered"> Add Renting</button>
+                  <button className="button is-primary has-text-centered">
+                    {" "}
+                    Add Renting
+                  </button>
                 </Link>
               </div>
             </div>

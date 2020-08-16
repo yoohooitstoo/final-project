@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const path = require("path");
 const routes = require("./routes");
 const app = express();
-const login = require("./routes/login");
 
 const PORT = process.env.PORT || 3001;
 
@@ -17,11 +16,9 @@ app.use(function(req,res,next) {
 })
 
 app.use(express.static("client/build"));
-// Add routes, both API and view
-app.use("/api/login", login);
+
+// API and View routes
 app.use(routes);
-
-
 
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/mern-starter", {
