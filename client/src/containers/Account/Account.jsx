@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import API from '../../utils/API.js';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import API from "../../utils/API.js";
+import Book from "../../components/Book/Book";
+
 
 class Account extends Component {
   state = {
@@ -36,8 +38,8 @@ class Account extends Component {
             </Link>
           </div>
           <div className="buttons is-left">
-          <Link to={`/addbook/${this.props.match.params.id}`}>
-              <button className="buttons is-primary">Add Book</button>
+            <Link to={`/addbook/${this.props.match.params.id}`}>
+              <button className="button is-primary">Add Book</button>
             </Link>
           </div>
           <div className="tile is-ancestor">
@@ -50,10 +52,14 @@ class Account extends Component {
 
           <div className="tile is-ancestor">
             <div className="tile is-parent">
-              <div className="tile is-child box" >
-                {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))}
+              <div className="tile is-child box">
+                {this.state.ownedBooks.map((book) => (
+                  <Book book={book} />
+                  // <>
+                  // <img src={book.image} alt={book.title} className="mx-4" onClick={e =>{ this.toggleModal();}} />
+
+                  // </>
+                ))}
               </div>
             </div>
           </div>
@@ -72,7 +78,41 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
+                <p className="title has-text-centered">Click here for modal</p>
+                <div className="modal">
+                  <div className="modal-background"></div>
+                  <div className="modal-card">
+                    <header className="modal-card-head">
+                      <p className="modal-card-title">this.props</p>
+                      <button className="delete" aria-label="close"></button>
+                    </header>
+                    <section className="modal-card-body">
+                      <img
+                        className="image"
+                        src="https://placekitten.com/300/450"
+                        alt="Placeholder bookcover"
+                        id="bookcover-modal"
+                      />
+                      <p className="title is-3"></p>
+                      <p className="subtitle is-5">Author</p>
+                      <p>
+                        Description of book, limit character count to something
+                        reasonable. No more than two lines. Just enough to be
+                        sure you're looking at the right book.
+                      </p>
+                      <br />
+                      <p>
+                        <strong>Rating:</strong> X/X
+                      </p>
+                    </section>
+                    <footer className="modal-card-foot">
+                      <button className="button is-success">
+                        Add to Library
+                      </button>
+                      <button className="button">Cancel</button>
+                    </footer>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="tile is-parent">
@@ -82,9 +122,12 @@ class Account extends Component {
             </div>
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <Link to="/addbooks">
+                <Link to="/main">
                   {" "}
-                  <p className="title has-text-centered"> Add Renting</p>
+                  <button className="button is-primary has-text-centered">
+                    {" "}
+                    Add Renting
+                  </button>
                 </Link>
               </div>
             </div>
