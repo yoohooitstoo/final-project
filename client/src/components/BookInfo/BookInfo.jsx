@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import "./BookInfo.css"
+import API from "../../utils/API";
 
 class BookInfo extends Component {
   book = this.props.book;
+
+deleteBook(book) {
+  console.log(this.book._id)
+  API.deleteOwnedBook(this.book._id)
+  .then((res) => {
+    console.log(res);
+    this.props.onClose();
+    window.location.reload();
+  })
+  .catch((err) => console.log(err));
+}
   render() {
+    console.log(this.book);
     return (
       <div className="modal is-active">
         <div className="modal-background" onClick={()=>this.props.onClose()}></div>
@@ -35,7 +48,7 @@ class BookInfo extends Component {
             </p>
           </section>
           <footer className="modal-card-foot">
-            <button className="button is-danger">Remove from Library</button>
+            <button className="button is-danger" onClick={() =>this.deleteBook(this.book)}>Remove from Library</button>
             {/* <button className="button">Remove Button</button> */}
           </footer>
         </div>

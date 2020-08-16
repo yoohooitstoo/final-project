@@ -12,12 +12,12 @@ export default {
     },
     deleteOwnedBook: function(id) {
         console.log(id)
-        return axios.delete(`http://localhost:3001/api/users/${id}`)
+        return axios.delete(`http://localhost:3000/api/books/${id}`)
     },
-    requestToRent: function(id, userId) {
+    requestToRent: function(id, user) {
         console.log(id)
-        console.log(userId)
-        return axios.put(`http://localhost:3000/api/books/${id}`, {userId: userId});
+        console.log(user)
+        return axios.put(`http://localhost:3000/api/books/${id}`, {userId: user});
     },
     getAllOwnedBooks: function() {
         console.log("hello")

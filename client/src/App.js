@@ -10,6 +10,7 @@ import Account from "./containers/Account/Account.jsx";
 import Main from "./containers/Main/Main.jsx"
 // import StatusContext from "./utils/Status";
 import UserContext from "./utils/User";
+import BookInfo from "./components/BookInfo/BookInfo";
 
 // import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
@@ -58,8 +59,9 @@ function App() {
         < Route exact path= "/main/:id" component= {Main} />
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook/:id" component={AddBook} />
+        <Route exact path= "/bookinfo" component={BookInfo}/>
         {/* for testing temporarily */}
-        < Route exact path= "/addbook" component={AddBook} />
+        {/* < Route exact path= "/addbook" component={AddBook} /> */}
         < Route exact path= "/account/:id" component={Account} />
       </div>
       </UserContext.Provider>

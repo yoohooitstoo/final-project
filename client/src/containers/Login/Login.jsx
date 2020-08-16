@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/User";
+// import e from "express";
 
 // class Login extends Component {
 const Login = (props) => {
@@ -27,6 +28,7 @@ const Login = (props) => {
       })
       .catch((err) => {
         console.log(err);
+        alert("400 error message- invalid email or password");
       });
   };
 
