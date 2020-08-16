@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import axios from "axios";
 import Home from "./containers/Home/Home.jsx";
 import Login from "./containers/Login/Login.jsx";
-import Main from "./containers/Main/Main.jsx";
+import Search from "./containers/Search/Search.jsx";
 import SignUp from "./containers/SignUp/SignUp.jsx";
 import AddBook from "./containers/AddBook/AddBook.jsx";
 import Account from "./containers/Account/Account.jsx";
@@ -53,7 +53,7 @@ function App() {
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
-        < Route exact path= "/main" component= {Main} />
+        < Route exact path= "/search" component= {Search} />
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook/:id" component={AddBook} />
         {/* for testing temporarily */}
