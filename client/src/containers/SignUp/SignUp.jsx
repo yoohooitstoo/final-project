@@ -27,7 +27,7 @@ const SignUp = (props) => {
       })
       .catch((err) => {
         console.log(err);
-        alert("This is a 400 error- this email is already being used")
+        alert("This is a 400 error- this email is already being used");
       });
   };
 

@@ -10,8 +10,9 @@ class Main extends Component {
   }
 
   rentBook(book) {
-    const userId = this.props.match.params.id;
-    API.requestToRent(book._id, userId)
+    const user = this.props.match.params;
+    console.log(this.props.match.params)
+    API.requestToRent(book._id, user)
       .then((res) => {
         console.log(res);
         console.log(res.data._id);
@@ -30,6 +31,7 @@ class Main extends Component {
     });
   }
   render() {
+    console.log(this.props.match.params.id);  
     return (
       // Navbar component
       <div>
@@ -50,7 +52,7 @@ class Main extends Component {
                   className="hoverpic"
                 />
                 <div className="middle">
-                  <button className="button is-link" onClick={() =>this.rentBook()} >
+                  <button className="button is-link" onClick={() =>this.rentBook(book)} >
                     Rent Book
                   </button>
                 </div>

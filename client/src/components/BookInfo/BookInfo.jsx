@@ -16,6 +16,7 @@ deleteBook(book) {
   .catch((err) => console.log(err));
 }
   render() {
+    console.log(this.book);
     return (
       <div className="modal is-active">
         <div className="modal-background" onClick={()=>this.props.onClose()}></div>
@@ -41,9 +42,10 @@ deleteBook(book) {
               <strong>Description:</strong> {this.book.description}
             </p>
             <br />
-            {/* <p>
-              <strong>Rating:</strong> X/X
-            </p> */}
+            <p>
+              <strong>Requesters:</strong> {this.book.requesters.map((requester) =>( <p>{requester}</p>
+              ))}
+            </p>
           </section>
           <footer className="modal-card-foot">
             <button className="button is-danger" onClick={() =>this.deleteBook(this.book)}>Remove from Library</button>
