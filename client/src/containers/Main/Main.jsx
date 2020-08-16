@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './Main.css';
 import Navbar from '../../components/Navbar/Navbar';
-// import BookInfo from "../../components/BookInfo/BookInfo";
+import BookInfo from '../../components/BookInfo/BookInfo';
+import Book from '../../components/Book/Book';
 import API from '../../utils/API';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class Main extends Component {
   state = {
@@ -33,28 +34,18 @@ class Main extends Component {
   render() {
     return (
       // Navbar component
+
       <div>
         <Navbar />
         <div className="container">
           <div className="columns bookrow">
             {this.state.allOwnedBooks.map((book) => (
               <div className="box bookcover">
-                <img
-                  src={book.image}
-                  alt={book.title}
-                  className="hoverpic"
-                />
-                <div className="middle">
-                  <button
-                    className="button is-link"
-                    onClick={() => this.rentBook(book)}
-                  >
-                    Rent Book
-                  </button>
-                </div>
+                <Book book={book} />
+
               </div>
               ))}
-          </div>
+            </div>
         </div>
       </div>
     );
