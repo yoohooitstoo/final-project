@@ -1,35 +1,46 @@
-import React from 'react';
-import './BookInfo.css';
+import React, { Component } from "react";
+import "./BookInfo.css"
 
-const BookInfo = () => {
-  return (
-    <div className="modal is-active">
-      <div className="modal-background"></div>
-      <div className="modal-card">
-        <header className="modal-card-head">
-          <p className="modal-card-title">About this book</p>
-          <button className="delete" aria-label="close"></button>
-        </header>
-        <section className="modal-card-body">
-          <img className= "image" src="https://placekitten.com/300/450" alt="Placeholder bookcover" id="bookcover-modal" />
-          <p className="title is-3">Book Title</p>
-          <p className="subtitle is-5">Author</p>
-          <p>Description of book, limit character count to something reasonable. No
-            more than two lines. Just enought to be sure you're looking at the
-            right book.</p> 
-          <br/>
-          <p>
-            <strong>Rating:</strong> X/X
-          </p>
-
-        </section>
-        <footer className="modal-card-foot">
-          <button className="button is-success">Add to Library</button>
-          <button className="button">Cancel</button>
-        </footer>
+class BookInfo extends Component {
+  book = this.props.book;
+  render() {
+    return (
+      <div className="modal is-active">
+        <div className="modal-background" onClick={()=>this.props.onClose()}></div>
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title">Book Preview</p>
+            <button
+              className="delete modal-card-title"
+              aria-label="close"
+              onClick={()=>this.props.onClose()}
+            ></button>
+          </header>
+          <section className="modal-card-body">
+            <img
+              src={this.book.image}
+              alt={this.book.title}
+              className="book-cover mr-4"
+              style={{float: "left"}}
+            />
+            <p className="title is-3">{this.book.title}</p>
+            <p className="subtitle is-5">Author(s): {this.book.authors}</p>
+            <p className="has-text-justified">
+              <strong>Description:</strong> {this.book.description}
+            </p>
+            <br />
+            <p>
+              <strong>Rating:</strong> X/X
+            </p>
+          </section>
+          <footer className="modal-card-foot">
+            <button className="button is-danger">Remove from Library</button>
+            {/* <button className="button">Remove Button</button> */}
+          </footer>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default BookInfo;

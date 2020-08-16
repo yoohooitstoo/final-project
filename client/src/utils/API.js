@@ -14,8 +14,13 @@ export default {
         console.log(id)
         return axios.delete(`http://localhost:3001/api/users/${id}`)
     },
-    requestToRent: function(id) {
+    requestToRent: function(id, userId) {
         console.log(id)
-        return axios.put(`http://localhost:3001/api/books/renting/${id}`);
+        console.log(userId)
+        return axios.put(`http://localhost:3000/api/books/${id}`, {userId: userId});
     },
+    getAllOwnedBooks: function() {
+        console.log("hello")
+        return axios.get("http://localhost:3001/api/books")
+    }
 }
