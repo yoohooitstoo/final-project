@@ -9,7 +9,8 @@ import AddBook from "./containers/AddBook/AddBook.jsx";
 import Account from "./containers/Account/Account.jsx";
 // import StatusContext from "./utils/Status";
 import UserContext from "./utils/User";
-import BookInfo from "./components/BookInfo/BookInfo"
+import BookInfo from "./components/BookInfo/BookInfo";
+import Main from "./containers/Main/Main";
 
 // import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
@@ -54,11 +55,7 @@ function App() {
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
-<<<<<<< HEAD
-        < Route exact path= "/search" component= {Search} />
-=======
         < Route exact path= "/main/:id" component= {Main} />
->>>>>>> 27e204d47cb785ea148b1b4938573514a1be1102
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook/:id" component={AddBook} />
         <Route exact path= "/bookinfo" component={BookInfo}/>
