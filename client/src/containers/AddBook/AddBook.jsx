@@ -10,7 +10,7 @@ import "./AddBook.css";
 // import PropTypes from 'prop-types';
 // import Search from 'client/src/components/Search.js';
 import API from "../../utils/API.js";
-import BookInfo from '../../components/BookInfo/BookInfo';
+// import BookInfo from '../../components/BookInfo/BookInfo';
 
 class AddBook extends Component {
   state = {

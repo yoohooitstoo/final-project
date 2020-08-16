@@ -11,16 +11,16 @@ class Navbar extends Component {
 
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item">My Library</a>
+              {/* <a class="navbar-item">My Library</a> */}
 
-              <a class="navbar-item">Browse Books</a>
+              {/* <a class="navbar-item">Browse Books</a> */}
 
             </div>
 
             <div class="navbar-end">
               <div class="navbar-item">
                 <div class="button">
-                  <a class="button is-light">Log Out</a>
+                  {/* <a class="button is-light">Log Out</a> */}
                 </div>
               </div>
             </div>

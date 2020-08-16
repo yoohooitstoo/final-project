@@ -54,7 +54,7 @@ function App() {
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
-        < Route exact path= "/main" component= {Main} />
+        < Route exact path= "/main/:id" component= {Main} />
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook/:id" component={AddBook} />
         <Route exact path= "/bookinfo" component={BookInfo}/>
