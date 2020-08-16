@@ -50,7 +50,7 @@ class Main extends Component {
                   className="hoverpic"
                 />
                 <div className="middle">
-                  <button className="button is-link" onClick={() =>this.rentBook(book)} >
+                  <button className="button is-link" onClick={() =>this.rentBook()} >
                     Rent Book
                   </button>
                 </div>

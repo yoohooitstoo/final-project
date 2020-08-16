@@ -11,8 +11,8 @@ export default {
         //may have to change to 3001 to avoid cors policy!!!
     },
     deleteOwnedBook: function(id) {
-        console.log(id)
-        return axios.delete(`http://localhost:3001/api/books/${id}`)
+        console.log("hitting API")
+        return axios.delete(`http://localhost:3000/api/books/${id}`)
     },
     requestToRent: function(id, userId) {
         console.log(id)
