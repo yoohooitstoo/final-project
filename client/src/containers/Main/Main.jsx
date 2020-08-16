@@ -2,9 +2,18 @@ import React, { Component } from 'react';
 import './Main.css';
 import Navbar from "../../components/Navbar/Navbar"
 import BookInfo from '../../components/BookInfo/BookInfo';
+import API from '../../utils/API';
 // import { Link } from 'react-router-dom';
 
 class Main extends Component {
+
+  componentDidMount() {
+    API.getAllOwnedBooks()
+    .then((res) => {
+      console.log(res)
+      console.log(res.data)
+    });
+  }
   render() {
     return (
       // Navbar component
@@ -13,61 +22,7 @@ class Main extends Component {
         <div classNameName="container">
           <div className="columns bookrow">
             <div className="column"></div>
-            <div className="column">
-              {/* //Book Cover from database */}
-              <div className="figure is-320x480 bookcover">
-                <img src="https://placekitten.com/320/480" className= "hoverpic"/>
-                <div className= "middle">
-                  <button className="button is-link" href ={BookInfo}>Click</button>
-                </div>
-              </div>
-              {/* //Book title from database */}
-              <p className="title">One</p>
-            </div>
-            <div className="column">
-              {/* //Book Cover from database */}
-              <div className="figure is-320x480 bookcover">
-                <img src="https://placekitten.com/320/480" className= "hoverpic"/>
-                <div className= "middle">
-                  <button className="button is-link" href ={BookInfo}>Click</button>
-                </div>
-              </div>
-              {/* //Book title from database */}
-              <p className="title">One</p>
-            </div>
-            <div className="column">
-              {/* //Book Cover from database */}
-              <div className="figure is-320x480 bookcover">
-                <img src="https://placekitten.com/320/480" className= "hoverpic"/>
-                <div className= "middle">
-                  <button className="button is-link" href ={BookInfo}>Click</button>
-                </div>
-              </div>
-              {/* //Book title from database */}
-              <p className="title">One</p>
-            </div>
-            <div className="column">
-              {/* //Book Cover from database */}
-              <div className="figure is-320x480 bookcover">
-                <img src="https://placekitten.com/320/480" className= "hoverpic"/>
-                <div className= "middle">
-                  <button className="button is-link" href ={BookInfo}>Click</button>
-                </div>
-              </div>
-              {/* //Book title from database */}
-              <p className="title">One</p>
-            </div>
-            <div className="column">
-              {/* //Book Cover from database */}
-              <div className="figure is-320x480 bookcover">
-                <img src="https://placekitten.com/320/480" className= "hoverpic"/>
-                <div className= "middle">
-                  <button className="button is-link" href ={BookInfo}>Click</button>
-                </div>
-              </div>
-              {/* //Book title from database */}
-              <p className="title">One</p>
-            </div>
+
             <div className="column"></div>
           </div>
         </div>
@@ -78,7 +33,7 @@ class Main extends Component {
                 {/* {this.state.ownedBooks.map((book) => (   
                   <img src={book.image} alt="" className="mx-4" />
                   ))} */}
-                <img src="https://placekitten.com/320/480" className="hoverpic"/>
+                <img src="https://placekitten.com/320/480" alt="kitty" className="hoverpic"/>
                 <div className= "middle">
                   <button className="button is-link" href ={BookInfo}>Click</button>
                 </div>
@@ -89,7 +44,7 @@ class Main extends Component {
                 {/* {this.state.ownedBooks.map((book) => (   
                   <img src={book.image} alt="" className="mx-4" />
                   ))} */}
-                <img src="https://placekitten.com/320/480" className="hoverpic"/>
+                <img src="https://placekitten.com/320/480" alt="kitty" className="hoverpic"/>
                 <div className= "middle">
                   <button className="button is-link" href ={BookInfo}>Click</button>
                 </div>
@@ -100,7 +55,7 @@ class Main extends Component {
                 {/* {this.state.ownedBooks.map((book) => (   
                   <img src={book.image} alt="" className="mx-4" />
                   ))} */}
-                <img src="https://placekitten.com/320/480" className="hoverpic"/>
+                <img src="https://placekitten.com/320/480" alt="kitty" className="hoverpic"/>
                 <div className= "middle">
                   <button className="button is-link" href ={BookInfo}>Click</button>
                 </div>
@@ -111,7 +66,7 @@ class Main extends Component {
                 {/* {this.state.ownedBooks.map((book) => (   
                   <img src={book.image} alt="" className="mx-4" />
                   ))} */}
-                <img src="https://placekitten.com/320/480" className="hoverpic"/>
+                <img src="https://placekitten.com/320/480" alt="kitty" className="hoverpic"/>
                 <div className= "middle">
                   <button className="button is-link" href ={BookInfo}>Click</button>
                 </div>
@@ -122,7 +77,7 @@ class Main extends Component {
                 {/* {this.state.ownedBooks.map((book) => (   
                   <img src={book.image} alt="" className="mx-4" />
                   ))} */}
-                <img src="https://placekitten.com/320/480" className="hoverpic"/>
+                <img src="https://placekitten.com/320/480" alt="kitty" className="hoverpic"/>
                 <div className= "middle">
                   <button className="button is-link" href ={BookInfo}>Click</button>
                 </div>
