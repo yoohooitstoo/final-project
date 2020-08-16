@@ -1,9 +1,15 @@
 .bookrow {
   margin-top: 30px;
+
 }
 
 .bookcover {
   position: relative;
+  max-width: fit fit-content;
+  padding: 2;
+  margin: 20px;
+  
+
 }
 
 html, body {
@@ -22,7 +28,7 @@ html, body {
 
 .polygon {
 clip-path:polygon(6% 8%, 3% 28%, 3% 71%, 97% 72%, 97% 28%, 94% 8%);
-background-color: saddlebrown;
+background-color: #753d13;
 width: auto;
 height: 20px;
 }
@@ -52,18 +58,20 @@ height: 20px;
   opacity: .3s;
 }
 
+.box {
+  padding: 0;
+  height: fit-content;
+  background-color: #333333;
+}
+
+.label {
+  color:#FAFBEB;
+}
+
+
+
 /* does this help?? idk */
-.is-parent {
-  width: fit-content;
-}
 
-.is-ancestor {
-  width: fit-content;
-}
-
-.is-child {
-  width: fit-content;
-}
 
 
 

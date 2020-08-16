@@ -34,18 +34,44 @@ class Main extends Component {
   render() {
     return (
       // Navbar component
-
       <div>
         <Navbar />
-        <div className="container">
-          <div className="columns bookrow">
-            {this.state.allOwnedBooks.map((book) => (
-              <div className="box bookcover">
-                <Book book={book} />
-
-              </div>
+        <div className="section">
+          <div className="column box is-half-desktop is-offset-2 is-full-mobile">
+              <div className="section" id="searchBox">
+                <div className="field">
+                  <label className="label is-large">Look for books around you</label>
+                  <div className="control has-icons-left">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Title..."
+                      value={this.state.searchValue}
+                      onChange={this.handleSearch}
+                    />
+                    <span className="icon is-small is-left">
+                      <i className="fas fa-book"></i>
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="button is-inverted is-outlined"
+                  onClick={this.handleSearchAPI}
+                >
+                  Search
+                </button>
+            </div>
+          </div>
+          <div className="container is-fluid">
+            <div className="columns bookrow">
+              {this.state.allOwnedBooks.map((book) => (
+                <div className="bookcover">
+                  <Book book={book} />
+                </div>
               ))}
             </div>
+          </div>
+          <div className="polygon"></div>
         </div>
       </div>
     );

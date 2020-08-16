@@ -15,9 +15,9 @@ class Book extends Component {
 
   render() {
     return (
-      <>
+      <div className="box bookbox">
         <img
-          className="is-clickable mx-4"
+          className="is-clickable"
           src={this.book.image}
           alt={this.book.title}
           onClick={() => this.toggleModal()}
@@ -31,7 +31,7 @@ class Book extends Component {
           </button>
         </div>
         {this.state.showModal && <BookInfo book={this.book} onClose={this.toggleModal.bind(this)} />}
-      </>
+      </div>
     );
   }
 }
