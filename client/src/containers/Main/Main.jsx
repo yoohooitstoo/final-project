@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Main.css";
 import Navbar from "../../components/Navbar/Navbar";
 // import BookInfo from "../../components/BookInfo/BookInfo";
 import API from "../../utils/API";
