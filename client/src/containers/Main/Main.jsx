@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import './Main.css';
 import Navbar from '../../components/Navbar/Navbar';
@@ -5,6 +6,13 @@ import BookInfo from '../../components/BookInfo/BookInfo';
 import Book from '../../components/Book/Book';
 import API from '../../utils/API';
 // import { Link } from 'react-router-dom';
+=======
+import React, { Component } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+// import BookInfo from "../../components/BookInfo/BookInfo";
+import API from "../../utils/API";
+import { Link } from 'react-router-dom';
+>>>>>>> 85b41f297fab19f5455d3193af43bc16e3a05d97
 
 class Main extends Component {
   state = {

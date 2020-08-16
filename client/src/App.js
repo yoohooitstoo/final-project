@@ -7,6 +7,7 @@ import Main from "./containers/Main/Main.jsx";
 import SignUp from "./containers/SignUp/SignUp.jsx";
 import AddBook from "./containers/AddBook/AddBook.jsx";
 import Account from "./containers/Account/Account.jsx";
+import Main from "./containers/Main/Main.jsx"
 // import StatusContext from "./utils/Status";
 import UserContext from "./utils/User";
 
@@ -53,6 +54,10 @@ function App() {
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
+<<<<<<< HEAD
+=======
+        < Route exact path= "/search" component= {Search} />
+>>>>>>> 85b41f297fab19f5455d3193af43bc16e3a05d97
         < Route exact path= "/main/:id" component= {Main} />
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook/:id" component={AddBook} />

@@ -32,7 +32,8 @@ class BookInfo extends Component {
             </p>
             <br />
             <p>
-              <strong>Rating:</strong> X/X
+              <strong>Requesters:</strong> {this.book.requesters.map((requester) =>( <p>{requester}</p>
+              ))}
             </p>
           </section>
           <footer className="modal-card-foot">
