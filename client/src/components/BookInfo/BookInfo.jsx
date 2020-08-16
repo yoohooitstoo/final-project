@@ -6,7 +6,7 @@ class BookInfo extends Component {
   render() {
     return (
       <div className="modal is-active">
-        <div className="modal-background"></div>
+        <div className="modal-background" onClick={()=>this.props.onClose()}></div>
         <div className="modal-card">
           <header className="modal-card-head">
             <p className="modal-card-title">Book Preview</p>
@@ -20,12 +20,13 @@ class BookInfo extends Component {
             <img
               src={this.book.image}
               alt={this.book.title}
-              className="book-cover"
+              className="book-cover mr-4"
+              style={{float: "left"}}
             />
             <p className="title is-3">{this.book.title}</p>
             <p className="subtitle is-5">Author(s): {this.book.authors}</p>
-            <p>
-              Description: {this.book.description}
+            <p className="has-text-justified">
+              <strong>Description:</strong> {this.book.description}
             </p>
             <br />
             <p>
@@ -33,8 +34,8 @@ class BookInfo extends Component {
             </p>
           </section>
           <footer className="modal-card-foot">
-            <button className="button is-success">Add to Library</button>
-            <button className="button">Remove Button</button>
+            <button className="button is-danger">Remove from Library</button>
+            {/* <button className="button">Remove Button</button> */}
           </footer>
         </div>
       </div>

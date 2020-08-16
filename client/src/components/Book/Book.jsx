@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookInfo from "../../components/BookInfo/BookInfo.jsx";
+import "./Book.css"
 
 class Book extends Component {
   state = {
@@ -16,7 +17,7 @@ class Book extends Component {
     return (
       <>
         <img
-          className="mx-4"
+          className="is-clickable mx-4"
           src={this.book.image}
           alt={this.book.title}
           onClick={() => this.toggleModal()}
