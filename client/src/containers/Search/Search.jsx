@@ -11,173 +11,48 @@ class Search extends Component {
         <Navbar />
         <div className="container">
           <div className="columns bookrow">
-            <div className="tile is-ancestor">
-              <div className="tile is-parent is-narrow">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
+            <div className="box bookcover">
+
+              <img src="https://placekitten.com/320/480" className="hoverpic" />
+              <div className="middle">
+                <button className="button is-link" href={BookInfo}>
+                  Click
+                </button>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="polygon"></div>
-        <div className= "container">
-          <div className="columns bookrow">
-            <div className="tile is-ancestor">
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
+            <div className="box bookcover">
+
+              <img src="https://placekitten.com/320/480" className="hoverpic" />
+              <div className="middle">
+                <button className="button is-link" href={BookInfo}>
+                  Click
+                </button>
               </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
+            </div>
+            <div className="box bookcover">
+
+              <img src="https://placekitten.com/320/480" className="hoverpic" />
+              <div className="middle">
+                <button className="button is-link" href={BookInfo}>
+                  Click
+                </button>
               </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
+            </div>
+            <div className="box bookcover">
+              <img src="https://placekitten.com/320/480" className="hoverpic" />
+              <div className="middle">
+                <button className="button is-link" href={BookInfo}>
+                  Click
+                </button>
               </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="tile is-parent">
-                <div className="tile is-child box bookcover">
-                  {/* {this.state.ownedBooks.map((book) => (   
-                  <img src={book.image} alt="" className="mx-4" />
-                  ))} */}
-                  <img
-                    src="https://placekitten.com/320/480"
-                    className="hoverpic"
-                  />
-                  <div className="middle">
-                    <button className="button is-link" href={BookInfo}>
-                      Click
-                    </button>
-                  </div>
-                </div>
+            </div>
+            
+            <div className="box bookcover">
+              <img src="https://placekitten.com/320/480" className="hoverpic" />
+              <div className="middle">
+                <button className="button is-link" href={BookInfo}>
+                  Click
+                </button>
               </div>
             </div>
           </div>
