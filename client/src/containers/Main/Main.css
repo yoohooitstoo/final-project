@@ -3,13 +3,17 @@
   overflow-x: auto;
 }
 
+
+.bookContainer {
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 8;
+}
+
 .bookcover {
   position: relative;
-  max-width: fit fit-content;
   padding: 2;
-  margin: 20px;
-  
-
+  margin:20px,10px,20px,;
 }
 
 html, body {
@@ -31,6 +35,7 @@ clip-path:polygon(6% 8%, 3% 28%, 3% 71%, 97% 72%, 97% 28%, 94% 8%);
 background-color: #753d13;
 width: auto;
 height: 20px;
+z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -54,19 +59,24 @@ height: 20px;
   opacity: 1;
 }
 
-.bookcover:hover .hoverpic{
-  opacity: .3s;
-}
-
 .box {
-  padding: 0;
-  height: fit-content;
-  background-color: #333333;
+  padding: 3;
+  height: 200px;
+  background-color: transparent;
+  min-width: fit-content;
 }
 
 .label {
   color:#FAFBEB;
 }
+
+.field {
+  background-color: #343a40;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Main.css';
 import Navbar from '../../components/Navbar/Navbar';
-import BookInfo from '../../components/BookInfo/BookInfo';
+// import BookInfo from '../../components/BookInfo/BookInfo';
 import Book from '../../components/Book/Book';
 import API from '../../utils/API';
 // import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ class Main extends Component {
 
   rentBook(book) {
     const user = this.props.match.params;
-    console.log(this.props.match.params)
+    console.log(this.props.match.params);
     API.requestToRent(book._id, user)
       .then((res) => {
         console.log(res);
@@ -33,41 +33,38 @@ class Main extends Component {
     });
   }
   render() {
-    console.log(this.props.match.params.id);  
+    console.log(this.props.match.params.id);
     return (
-      // Navbar component
       <div>
         <Navbar />
+
+        {/* Searchbox needs to search database, not google books api. */}
+
         <div className="section">
-          <div className="column box is-half-desktop is-offset-2 is-full-mobile">
-              <div className="section" id="searchBox">
-                <div className="field">
-                  <label className="label is-large">Look for books around you</label>
-                  <div className="control has-icons-left">
-                    <input
-                      className="input"
-                      type="text"
-                      placeholder="Title..."
-                      value={this.state.searchValue}
-                      onChange={this.handleSearch}
-                    />
-                    <span className="icon is-small is-left">
-                      <i className="fas fa-book"></i>
-                    </span>
-                  </div>
-                </div>
-                <button
-                  className="button is-inverted is-outlined"
-                  onClick={this.handleSearchAPI}
-                >
-                  Search
-                </button>
+          <div className="field">
+            <label className="label is-large">Search for books around you</label>
+            <div className="control has-icons-left">
+              <input
+                className="input"
+                type="text"
+                placeholder="Book Title"
+                value={this.state.searchValue}
+                onChange={this.handleSearch}
+              />
+              <span className="icon is-small is-left">
+                <i className="fas fa-book"></i>
+              </span>
+            </div>
+            <div className="control">
+              <a className= "button is-success is-medium"
+              onClick={this.handleSearchAPI}>Search</a>
             </div>
           </div>
-          <div className="container is-fluid">
-            <div className="columns bookrow">
+
+          <div className="container is-fluid bookContainer">
+            <div className="columns bookrow level">
               {this.state.allOwnedBooks.map((book) => (
-                <div className="bookcover">
+                <div className="bookcover level-item">
                   <Book book={book} />
                 </div>
               ))}
