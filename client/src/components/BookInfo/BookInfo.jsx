@@ -9,6 +9,7 @@ class BookInfo extends Component {
     console.log(requester);
     console.log(book._id);
     API.bookRented(requester, book._id)
+
   }
 
   deleteBook(book) {
@@ -54,8 +55,8 @@ class BookInfo extends Component {
             <p className="buttons are-small">
               <strong>Requesters:</strong>{" "}
               {this.book.requesters.map((requester) => (
-                <button className="button is-success is-outlined" onClick={() => this.bookRented(this.book, requester)}>
-                  <span>{requester}</span>
+                <button key={requester._id} className="button is-success is-outlined" onClick={() => this.bookRented(this.book, requester)}>
+                  <span>{requester.username}</span>
                 </button>
               ))}
             </p>

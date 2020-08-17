@@ -26,5 +26,8 @@ export default {
         // console.log(id)
         // console.log(book)
         return axios.put(`http://localhost:3000/api/users/rent/${id}`, {bookId: book})
+    },
+    getBookById: function(id) {
+        return axios.get(`/api/books/${id}`)
     }
 }
