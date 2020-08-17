@@ -13,7 +13,7 @@ class Account extends Component {
 
   // Make an axios call to get the User
   // on the User route, make sure we call .populate("books")
-  // on a successful call return, set the books on state.
+  // on a successful call return, set the books on state.npm star
   // map through the books array and display them on the page.
   componentDidMount() {
     console.log(this.props.match.params.id);

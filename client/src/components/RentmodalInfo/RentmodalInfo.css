@@ -1,0 +1,17 @@
+.card-image {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding:5px;
+  width: 300px;
+  height:450px;
+  };
+  .modal-background {
+    color: whitesmoke;
+  }
+  .image {
+    justify-content: center;
+  }
+  .book-cover {
+    margin: 0px auto;
+  }
+  h1 {color: blue}

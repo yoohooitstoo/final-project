@@ -23,7 +23,7 @@ module.exports = {
     console.log(req.body);
     db.Book.findByIdAndUpdate(
       req.params.id,
-      { $push: { requesters: req.body.userId.id } },
+      { $push: { requesters: req.body.userId } },
       { new: true }
     )
 

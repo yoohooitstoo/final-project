@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './Main.css';
 import Navbar from '../../components/Navbar/Navbar';
 // import BookInfo from '../../components/BookInfo/BookInfo';
-import Book from '../../components/Book/Book';
+import Rentmodal from '../../components/Rentmodal/Rentmodal';
 import API from '../../utils/API';
+
 // import { Link } from 'react-router-dom';
 
 class Main extends Component {
@@ -69,7 +70,7 @@ class Main extends Component {
             <div className="columns bookrow level">
               {this.state.allOwnedBooks.map((book) => (
                 <div className="bookcover level-item">
-                  <Book book={book} />
+                  <Rentmodal user={this.props.match.params.id} book={book} />
                 </div>
               ))}
             </div>
