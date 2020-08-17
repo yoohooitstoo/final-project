@@ -13,7 +13,7 @@ class Main extends Component {
 
   rentBook(book) {
     const user = this.props.match.params;
-    console.log(this.props.match.params);
+    // console.log(this.props.match.params)
     API.requestToRent(book._id, user)
       .then((res) => {
         console.log(res);
@@ -24,16 +24,17 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match);
+    // console.log(this.props.match);
     API.getAllOwnedBooks().then((res) => {
       // console.log(res.data);
-      const allOwnedBooks = res.data;
-      console.log(allOwnedBooks);
-      this.setState({ allOwnedBooks: allOwnedBooks });
+
+      const allOwnedBooks= res.data;
+      // console.log(allOwnedBooks);
+      this.setState({ allOwnedBooks: allOwnedBooks,})
     });
   }
   render() {
-    console.log(this.props.match.params.id);
+    // console.log(this.props.match.params.id);  
     return (
       <div>
         <Navbar />
