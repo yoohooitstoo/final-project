@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API.js";
 import Book from "../../components/Book/Book";
+import './Account.css';
 
 
 class Account extends Component {
@@ -51,20 +52,17 @@ class Account extends Component {
               </div>
             </div>
           </div>
-
-          <div className="tile is-ancestor">
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                {this.state.ownedBooks.map((book) => (
+          <div className="container is-fluid bookContainer">
+            <div className="columns bookrow level">
+              {this.state.ownedBooks.map((book) => (
+                <div className="bookcover level-item">
                   <Book key={book._id} book={book} />
-                  // <>
-                  // <img src={book.image} alt={book.title} className="mx-4" onClick={e =>{ this.toggleModal();}} />
-
-                  // </>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
+          <div className="polygon"></div>
+          
           <div className="tile is-ancestor">
             <div className="tile is-parent">
               <div className="tile is-child box">
@@ -72,15 +70,17 @@ class Account extends Component {
               </div>
             </div>
           </div>
-          <div className="tile is-ancestor">
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                {this.state.renting.map((book) => (
+          <div className="container is-fluid bookContainer">
+            <div className="columns bookrow level">
+              {this.state.renting.map((book) => (
+                <div className="bookcover level-item">
                   <Book book={book} />
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
+          <div className="polygon"></div>
+
           <div className="tile is-ancestor">
             <div className="tile is-parent">
               <div className="tile is-child box">
