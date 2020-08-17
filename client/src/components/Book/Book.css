@@ -8,6 +8,10 @@
   margin: 0px 10px 25px 10px;
 }
 
+.button {
+  border-width: 3px;
+}
+
 img {
   padding-bottom: 0;
   height: 200px;

@@ -24,7 +24,7 @@ class Book extends Component {
         />
         <div className="middle">
           <button 
-          className="button is-link"
+          className="button is-outlined is-medium"
           onClick={() => this.toggleModal()}
           >
             Rent Book
