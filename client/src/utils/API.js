@@ -22,5 +22,10 @@ export default {
     getAllOwnedBooks: function() {
         console.log("hello")
         return axios.get("http://localhost:3001/api/books")
+    },
+    bookRented: function(id, book) {
+        console.log(id)
+        console.log(book)
+        return axios.put(`http://localhost:3000/api/users/rent/${id}`, {bookId: book})
     }
 }
