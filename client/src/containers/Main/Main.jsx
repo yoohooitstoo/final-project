@@ -1,17 +1,19 @@
-import React, { Component } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-// import BookInfo from "../../components/BookInfo/BookInfo";
-import API from "../../utils/API";
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import './Main.css';
+import Navbar from '../../components/Navbar/Navbar';
+// import BookInfo from '../../components/BookInfo/BookInfo';
+import Book from '../../components/Book/Book';
+import API from '../../utils/API';
+// import { Link } from 'react-router-dom';
 
 class Main extends Component {
   state = {
     allOwnedBooks: [],
-  }
+  };
 
   rentBook(book) {
     const user = this.props.match.params;
-    console.log(this.props.match.params)
+    // console.log(this.props.match.params)
     API.requestToRent(book._id, user)
       .then((res) => {
         console.log(res);
@@ -22,45 +24,54 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match);
+    // console.log(this.props.match);
     API.getAllOwnedBooks().then((res) => {
       // console.log(res.data);
+
       const allOwnedBooks= res.data;
-      console.log(allOwnedBooks);
-      console.log(allOwnedBooks[0].requesters[0].username)
+      // console.log(allOwnedBooks);
       this.setState({ allOwnedBooks: allOwnedBooks,})
     });
   }
   render() {
-    console.log(this.props.match.params.id);  
+    // console.log(this.props.match.params.id);  
     return (
-      // Navbar component
       <div>
         <Navbar />
-        <div className="buttons" >
-        <Link to={`/account/${this.props.match.params.id}`}>
-          <button className="button is-primary">My Account</button>
-        </Link>
-        </div>
-        <div className="container is-fluid">
-          <div className="tile is-ancestor">
-          {this.state.allOwnedBooks.map((book) => (
-          <div className="tile is-parent">
-              <div className="tile is-child box bookcover">
-                <img
-                  src={book.image}
-                  alt={book.title}
-                  className="hoverpic"
-                />
-                <div className="middle">
-                  <button className="button is-link" onClick={() =>this.rentBook(book)} >
-                    Rent Book
-                  </button>
-                </div>
-              </div>
+
+        {/* Searchbox needs to search database, not google books api. */}
+
+        <div className="section">
+          <div className="field">
+            <label className="label is-large">Search for books around you</label>
+            <div className="control has-icons-left">
+              <input
+                className="input"
+                type="text"
+                placeholder="Book Title"
+                value={this.state.searchValue}
+                onChange={this.handleSearch}
+              />
+              <span className="icon is-small is-left">
+                <i className="fas fa-book"></i>
+              </span>
             </div>
-            ))}
+            <div className="control">
+              <a className= "button is-success is-medium"
+              onClick={this.handleSearchAPI}>Search</a>
+            </div>
           </div>
+
+          <div className="container is-fluid bookContainer">
+            <div className="columns bookrow level">
+              {this.state.allOwnedBooks.map((book) => (
+                <div className="bookcover level-item">
+                  <Book book={book} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="polygon"></div>
         </div>
       </div>
     );

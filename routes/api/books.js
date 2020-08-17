@@ -35,7 +35,7 @@ router
 
 router.put("/renting/:id", async (req, res) => {
   try {
-    console.log("Made it here");
+    console.log(req.params.id);
     let book = await Book.findByIdAndUpdate(req.params.id, {
       currentRenter: req.body.currentRenter,
     });
