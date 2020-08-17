@@ -27,6 +27,7 @@ const SignUp = (props) => {
       })
       .catch((err) => {
         console.log(err);
+        alert("This is a 400 error- this email is already being used");
       });
   };
 
@@ -113,10 +114,11 @@ const SignUp = (props) => {
           </div>
           <div className="field is-grouped is-grouped-centered">
             <p className="control">
-                <button className="button is-primary" type="submit">
-                  Sign Up
-                </button>
+              <button className="button is-primary" type="submit">
+                Sign Up
+              </button>
             </p>
+          
 
             <Link to="/">
               <button className="button is-link">Home</button>
