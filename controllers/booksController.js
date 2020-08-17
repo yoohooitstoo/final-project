@@ -20,12 +20,13 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
+    console.log(req.body);
     db.Book.findByIdAndUpdate(
       req.params.id,
-      { $push: { requesters: req.body.userId } },
+      { $push: { requesters: req.body.userId.id } },
       { new: true }
     )
-       .populate("requesters")
+    .populate("requesters")
     .then((dbModel) => {
         // const requesters = dbModel
         res.json(dbModel);

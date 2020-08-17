@@ -87,13 +87,13 @@ router.put("/added/:id", async (req, res) => {
 router.put("/rent/:id", async (req, res) => {
   try {
     console.log("Made it here");
-    console.log(req.query);
+    // console.log(req.query);
     let user = await User.findByIdAndUpdate(
       req.params.id,
       {$push: {renting: req.body.bookId}}, 
       { new: true }
     );
-    console.log(user);
+    // console.log(user);
     res.json(user)
   } catch (ex) {
     res.json(ex);
