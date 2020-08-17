@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   console.log("Made it here", req.params.id);
-  User.findById(req.params.id).populate("ownedBooks").then((user) => {
+  User.findById(req.params.id).populate("ownedBooks").populate("renting").then((user) => {
     res.json(user)
   });
 });
@@ -87,6 +87,7 @@ router.put("/added/:id", async (req, res) => {
 router.put("/rent/:id", async (req, res) => {
   try {
     console.log("Made it here");
+    console.log(req.query);
     let user = await User.findByIdAndUpdate(
       req.params.id,
       {$push: {renting: req.body.bookId}}, 
