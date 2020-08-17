@@ -27,6 +27,7 @@ class Main extends Component {
       // console.log(res.data);
       const allOwnedBooks= res.data;
       console.log(allOwnedBooks);
+      console.log(allOwnedBooks[0].requesters[0].username)
       this.setState({ allOwnedBooks: allOwnedBooks,})
     });
   }

@@ -1,9 +1,23 @@
 import React, { Component } from "react";
 import "./BookInfo.css"
 import API from "../../utils/API";
-
 class BookInfo extends Component {
+state = {
+  allOwnedBooks : []
+}
+
   book = this.props.book;
+
+  componentDidMount() {
+    API.getAllOwnedBooks().then((res) => {
+      // console.log(res.data);
+      const allOwnedBooks= res.data;
+      //console.log(allOwnedBooks);
+      console.log(this.book);
+      // console.log(allOwnedBooks[0].requesters[0].username)
+      this.setState({ allOwnedBooks: allOwnedBooks })
+    });
+  }
 
 deleteBook(book) {
   console.log(this.book._id)
@@ -43,8 +57,8 @@ deleteBook(book) {
             </p>
             <br />
             <p>
-              <strong>Requesters:</strong> {this.book.requesters.map((requester) =>( <p>{requester}</p>
-              ))}
+              {/* <strong>Requesters:</strong> {this.state.allOwnedBooks.requesters.map((book) =>( <p>{book.username}</p>
+              ))} */}
             </p>
           </section>
           <footer className="modal-card-foot">

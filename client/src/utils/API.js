@@ -22,5 +22,5 @@ export default {
     getAllOwnedBooks: function() {
         console.log("hello")
         return axios.get("http://localhost:3001/api/books")
-    }
+    },
 }
