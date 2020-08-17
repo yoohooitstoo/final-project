@@ -27,7 +27,7 @@ class Book extends Component {
           className="button is-outlined is-medium"
           onClick={() => this.toggleModal()}
           >
-            Rent Book
+            Book Info
           </button>
         </div>
         {this.state.showModal && <BookInfo book={this.book} onClose={this.toggleModal.bind(this)} />}

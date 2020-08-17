@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import API from "../../utils/API.js";
-import Book from "../../components/Book/Book";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import API from '../../utils/API.js';
+import Book from '../../components/Book/Book';
 import './Account.css';
-
+import Navbar from '../../components/Navbar/Navbar.jsx';
 
 class Account extends Component {
   state = {
@@ -18,10 +18,10 @@ class Account extends Component {
   componentDidMount() {
     console.log(this.props.match.params.id);
     API.getOwnedBooks(this.props.match.params.id)
-  
+
       .then((res) => {
-        console.log("Owned Books", res.data.ownedBooks);
-        console.log("Renting", res.data.renting);
+        console.log('Owned Books', res.data.ownedBooks);
+        console.log('Renting', res.data.renting);
         console.log(res.data);
         const ownedBooks = res.data.ownedBooks;
         const renting = res.data.renting;
@@ -33,25 +33,22 @@ class Account extends Component {
 
   render() {
     return (
-      <div className="container is-fluid">
-        <div className="notification has-background-warning-dark">
-          <div className="buttons is-right">
-            <Link to="/">
-              <button className="button is-primary">Log Out</button>
-            </Link>
-          </div>
-          <div className="buttons is-left">
-            <Link to={`/addbook/${this.props.match.params.id}`}>
-              <button className="button is-primary">Add Book</button>
-            </Link>
-          </div>
-          <div className="tile is-ancestor">
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <p className="title has-text-centered">Your Library</p>
+      <div>
+        <Navbar />
+        <div className="section">
+          <section class="hero is-dark">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">Your Library</h1>
+                <h2 class="subtitle">Add books for others to rent</h2>
+                <Link to={`/addbook/${this.props.match.params.id}`}>
+                  <button className="button is-success is-large">
+                    Add Books
+                  </button>
+                </Link>
               </div>
             </div>
-          </div>
+          </section>
           <div className="container is-fluid bookContainer">
             <div className="columns bookrow level">
               {this.state.ownedBooks.map((book) => (
@@ -62,16 +59,24 @@ class Account extends Component {
             </div>
           </div>
           <div className="polygon"></div>
-          
-          <div className="tile is-ancestor">
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <p className="title has-text-centered">Borrowed Library</p>
+
+          <section class="hero is-dark">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">Borrowed Library</h1>
+                <h2 class="subtitle">The books you are currently borrowing</h2>
+                <Link to={`/main/${this.props.match.params.id}`} className="">
+                  {' '}
+                  <button className="button findbtn is-large">
+                    {' '}
+                    Find Books
+                  </button>
+                </Link>
               </div>
             </div>
-          </div>
+          </section>
           <div className="container is-fluid bookContainer">
-            <div className="columns bookrow level">
+            <div className="columns borrowrow level">
               {this.state.renting.map((book) => (
                 <div className="bookcover level-item">
                   <Book book={book} />
@@ -80,20 +85,6 @@ class Account extends Component {
             </div>
           </div>
           <div className="polygon"></div>
-
-          <div className="tile is-ancestor">
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <Link to={`/main/${this.props.match.params.id}`}>
-                  {" "}
-                  <button className="button is-primary has-text-centered">
-                    {" "}
-                    Add Renting
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     );

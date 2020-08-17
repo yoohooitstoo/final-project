@@ -34,7 +34,7 @@ state = {
         ></div>
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title">Book Preview</p>
+            <p className="modal-card-title">Book Info</p>
             <button
               className="delete modal-card-title"
               aria-label="close"
