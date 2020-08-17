@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Main.css';
 import Navbar from '../../components/Navbar/Navbar';
 // import BookInfo from '../../components/BookInfo/BookInfo';
-import Book from '../../components/Book/Book';
+import SearchPageBook from '../../components/SearchPageBook/SearchPageBook';
 import API from '../../utils/API';
 // import { Link } from 'react-router-dom';
 
@@ -11,20 +11,21 @@ class Main extends Component {
     allOwnedBooks: [],
   };
 
-  rentBook(book) {
-    const user = this.props.match.params;
-    // console.log(this.props.match.params)
-    API.requestToRent(book._id, user)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data._id);
-        // this.props.history.push(`/account/${res.data._id}`);
-      })
-      .catch((err) => console.log(err));
-  }
+  // rentBook(book) {
+  //   const user = this.props.match.params;
+  // //console.log(this.props.match.params)
+  // console.log("here")
+  //   API.requestToRent(book._id, user)
+  //     .then((res) => {
+  //       console.log(res);
+  //       console.log(res.data._id);
+  //       // this.props.history.push(`/account/${res.data._id}`);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   componentDidMount() {
-    // console.log(this.props.match);
+    console.log(this.props.match.params.id);
     API.getAllOwnedBooks().then((res) => {
       // console.log(res.data);
 
@@ -57,7 +58,7 @@ class Main extends Component {
               </span>
             </div>
             <div className="control">
-              <a className= "button is-success is-medium"
+              <a href="/#" className= "button is-success is-medium"
               onClick={this.handleSearchAPI}>Search</a>
             </div>
           </div>
@@ -66,7 +67,7 @@ class Main extends Component {
             <div className="columns bookrow level">
               {this.state.allOwnedBooks.map((book) => (
                 <div className="bookcover level-item">
-                  <Book book={book} />
+                  <SearchPageBook user={this.props.match.params.id} book={book} />
                 </div>
               ))}
             </div>
