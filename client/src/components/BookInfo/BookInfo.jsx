@@ -11,8 +11,7 @@ state = {
   bookRented(book, requester) {
     console.log(requester);
     console.log(book._id);
-    API.bookRented(requester, book._id)
-
+    API.bookRented(requester, book._id);
   }
 
   deleteBook(book) {
