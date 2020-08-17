@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import "./BookInfo.css";
 import API from "../../utils/API";
-
 class BookInfo extends Component {
+state = {
+  allOwnedBooks : []
+}
+
   book = this.props.book;
 
   bookRented(book, requester) {

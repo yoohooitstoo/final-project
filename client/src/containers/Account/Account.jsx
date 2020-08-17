@@ -17,12 +17,14 @@ class Account extends Component {
   componentDidMount() {
     console.log(this.props.match.params.id);
     API.getOwnedBooks(this.props.match.params.id)
+  
       .then((res) => {
         console.log("Owned Books", res.data.ownedBooks);
         console.log("Renting", res.data.renting);
         console.log(res.data);
         const ownedBooks = res.data.ownedBooks;
         const renting = res.data.renting;
+        // console.log(ownedBooks);
         this.setState({ ownedBooks: ownedBooks, renting: renting });
       })
       .catch((err) => console.log(err));
