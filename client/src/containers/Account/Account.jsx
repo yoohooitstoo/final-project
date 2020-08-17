@@ -54,7 +54,7 @@ class Account extends Component {
             <div className="tile is-parent">
               <div className="tile is-child box">
                 {this.state.ownedBooks.map((book) => (
-                  <Book book={book} />
+                  <Book key={book._id} book={book} />
                   // <>
                   // <img src={book.image} alt={book.title} className="mx-4" onClick={e =>{ this.toggleModal();}} />
 
