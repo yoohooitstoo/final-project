@@ -17,12 +17,14 @@ class Account extends Component {
   componentDidMount() {
     console.log(this.props.match.params.id);
     API.getOwnedBooks(this.props.match.params.id)
+  
       .then((res) => {
         console.log("Owned Books", res.data.ownedBooks);
         console.log("Renting", res.data.renting);
         console.log(res.data);
         const ownedBooks = res.data.ownedBooks;
         const renting = res.data.renting;
+        // console.log(ownedBooks);
         this.setState({ ownedBooks: ownedBooks, renting: renting });
       })
       .catch((err) => console.log(err));
@@ -54,7 +56,7 @@ class Account extends Component {
             <div className="tile is-parent">
               <div className="tile is-child box">
                 {this.state.ownedBooks.map((book) => (
-                  <Book book={book} />
+                  <Book key={book._id} book={book} />
                   // <>
                   // <img src={book.image} alt={book.title} className="mx-4" onClick={e =>{ this.toggleModal();}} />
 
@@ -73,53 +75,13 @@ class Account extends Component {
           <div className="tile is-ancestor">
             <div className="tile is-parent">
               <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
+                {this.state.renting.map((book) => (
+                  <Book book={book} />
+                ))}
               </div>
             </div>
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <p className="title has-text-centered">Click here for modal</p>
-                <div className="modal">
-                  <div className="modal-background"></div>
-                  <div className="modal-card">
-                    <header className="modal-card-head">
-                      <p className="modal-card-title">this.props</p>
-                      <button className="delete" aria-label="close"></button>
-                    </header>
-                    <section className="modal-card-body">
-                      <img
-                        className="image"
-                        src="https://placekitten.com/300/450"
-                        alt="Placeholder bookcover"
-                        id="bookcover-modal"
-                      />
-                      <p className="title is-3"></p>
-                      <p className="subtitle is-5">Author</p>
-                      <p>
-                        Description of book, limit character count to something
-                        reasonable. No more than two lines. Just enough to be
-                        sure you're looking at the right book.
-                      </p>
-                      <br />
-                      <p>
-                        <strong>Rating:</strong> X/X
-                      </p>
-                    </section>
-                    <footer className="modal-card-foot">
-                      <button className="button is-success">
-                        Add to Library
-                      </button>
-                      <button className="button">Cancel</button>
-                    </footer>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tile is-parent">
-              <div className="tile is-child box">
-                <p className="title has-text-centered">Book</p>
-              </div>
-            </div>
+          </div>
+          <div className="tile is-ancestor">
             <div className="tile is-parent">
               <div className="tile is-child box">
                 <Link to={`/main/${this.props.match.params.id}`}>
