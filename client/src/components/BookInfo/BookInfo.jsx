@@ -8,7 +8,7 @@ class BookInfo extends Component {
   bookRented(book, requester) {
     console.log(requester);
     console.log(book._id);
-    API.bookRented(requester, book._id)
+    API.bookRented(requester._id, book._id)
 
   }
 
