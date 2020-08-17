@@ -41,6 +41,8 @@ class Main extends Component {
         {/* Searchbox needs to search database, not google books api. */}
 
         <div className="section">
+
+          
           <div className="field">
             <label className="label is-large">Search for books around you</label>
             <div className="control has-icons-left">
@@ -59,6 +61,7 @@ class Main extends Component {
               <a className= "button is-success is-medium"
               onClick={this.handleSearchAPI}>Search</a>
             </div>
+
           </div>
 
           <div className="container is-fluid bookContainer">
