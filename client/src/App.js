@@ -54,10 +54,6 @@ function App() {
       <div className="App">
         < Route exact path= "/" component={Home} />
         < Route exact path= "/login" component={Login} />
-<<<<<<< HEAD
-=======
-        < Route exact path= "/search" component= {Search} />
->>>>>>> 85b41f297fab19f5455d3193af43bc16e3a05d97
         < Route exact path= "/main/:id" component= {Main} />
         < Route exact path= "/signup" component={SignUp} />
         < Route exact path= "/addbook/:id" component={AddBook} />
