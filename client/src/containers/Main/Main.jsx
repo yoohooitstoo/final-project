@@ -43,7 +43,7 @@ class Main extends Component {
 
         {/* Searchbox needs to search database, not google books api. */}
 
-        <div className="section">
+        <div className="section nearby">
 
           
           {/* <div className="field">
