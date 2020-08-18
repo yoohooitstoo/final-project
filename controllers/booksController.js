@@ -1,16 +1,20 @@
-const db = require('../models');
+const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {
     db.Book.find()
-      .populate('requesters')
+      .populate("requesters")
+      .populate("owner")
+      .populate("currentRenter")
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
     db.Book.findById(req.params.id)
-      .populate('requesters')
+      .populate("requesters")
+      .populate("owner")
+      .populate("currentRenter")
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -26,9 +30,10 @@ module.exports = {
       { $push: { requesters: req.body.userId } },
       { new: true }
     )
-
-    .populate("requesters")
-    .then((dbModel) => {
+      .populate("requesters")
+      .populate("owner")
+      .populate("currentRenter")
+      .then((dbModel) => {
         // const requesters = dbModel
         res.json(dbModel);
       })

@@ -34,6 +34,13 @@ body {
   background-size: cover;
 }
 
+.browsehero {
+  text-align: center;
+  justify-content: center;
+}
+
+
+
 .hoverpic {
   opacity: 1;
   display: block;
@@ -76,15 +83,18 @@ body {
   min-width: fit-content;
 }
 
+
+
 .label {
   color: #fafbeb;
 }
 
-.field {
+/* //for search form feature, in development */
+/* .field {
   border-radius: 10px;
   background: #343a40;
 
   padding: 20px;
-}
+} */
 
 
