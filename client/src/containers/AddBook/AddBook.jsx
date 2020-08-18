@@ -89,7 +89,6 @@ class AddBook extends Component {
                   <div className="col d-flex justify-content-around">
                     <div>{book.title}</div>
                     <div>
-                      <button className="btn btn-secondary">View</button>
                       <button
                         className="btn btn-primary"
                         onClick={() => this.saveBook(book)}
