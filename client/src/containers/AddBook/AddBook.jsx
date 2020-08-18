@@ -90,7 +90,7 @@ class AddBook extends Component {
                     <div>{book.title}</div>
                     <div>
                       <button
-                        className="btn btn-primary"
+                        className="button is-success"
                         onClick={() => this.saveBook(book)}
                       >
                         Add to Library
