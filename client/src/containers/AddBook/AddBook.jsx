@@ -81,11 +81,11 @@ class AddBook extends Component {
           </div>
         </div>
 
-        <div className="section">
+        <div className="content">
           <div className="jumbotron">
             {this.state.booksSearched.map((book) => (
-              <div className="jumbotron">
-                <div className="row">
+              <div className="section books">
+                <div className="columns">
                   <div className="col d-flex justify-content-around">
                     <div>{book.title}</div>
                     <div>
