@@ -2,40 +2,26 @@ import React, { Component } from "react";
 import "./RentmodalInfo.css";
 import API from "../../utils/API";
 class RentmodalInfo extends Component {
-state = {
-  allOwnedBooks : []
-}
   book = this.props.book;
   rentBook(book) {
     const user = this.props.user;
-    console.log(this.props.user)
-  console.log(book)
+    console.log(this.props.user);
+    console.log(book);
     API.requestToRent(book._id, user)
       .then((res) => {
-          console.log(res)
-        // console.log(res);
-        // console.log(res.data._id);
-        // this.props.history.push(`/account/${res.data._id}`);
+        console.log(res);
       })
       .catch((err) => console.log(err));
+
+    // Close modal
+    this.props.onClose();
+
+    // Send email to book owner
+    window.location.href = `mailto:${book.owner.email}?subject=Rental%20Request%3A&body=Hello%20${book.owner.username}!%0D%0A%0D%0AI%20have%20sent%20a%20request%20to%20rent%20your%20book%2C%20${book.title}.%20Look%20forward%20to%20hearing%20from%20you%20soon!%0D%0A%0AThanks%2C%0D%0A%22YOUR SIGNATURE HERE%22`;
   }
-//   bookRented(book, requester) {
-//     console.log(requester);
-//     console.log(book._id);
-//     API.bookRented(requester, book._id);
-//   }
-//   deleteBook(book) {
-//     console.log(this.book._id);
-//     API.deleteOwnedBook(this.book._id)
-//       .then((res) => {
-//         console.log(res);
-//         this.props.onClose();
-//         window.location.reload();
-//       })
-//       .catch((err) => console.log(err));
-//   }
+
   render() {
-    console.log(this.book);
+    console.log("Rent this book", this.book);
     return (
       <div className="modal is-active">
         <div
@@ -59,9 +45,9 @@ state = {
               style={{ float: "left" }}
             />
             <p className="title is-3">{this.book.title}</p>
-            <br/>
+            <br />
             <p className="subtitle is-5">Author(s): {this.book.authors}</p>
-            <br/>
+            <br />
             <p className="has-text-justified">
               <strong>Description:</strong> {this.book.description}
             </p>
