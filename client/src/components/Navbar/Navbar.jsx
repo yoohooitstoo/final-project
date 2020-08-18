@@ -11,7 +11,10 @@ class Navbar extends Component {
           aria-label="main navigation"
         >
           <div className="navbar-brand">
-            <label className="label is-large">The Borrowers</label>
+            
+            <label className="label is-large">
+              <i className="fas fa-book"></i> The Borrowers
+            </label>
           </div>
 
           <div id="navbarBasicExample" class="navbar-menu">
