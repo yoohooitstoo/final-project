@@ -54,7 +54,7 @@ class BookInfo extends Component {
               <strong>Description:</strong> {this.book.description}
             </p>
             <br />
-            {this.props.isRental && (
+            {!this.props.isRental && (
               <p className="buttons are-small">
                 <strong>Requesters:</strong>{" "}
                 {this.book.requesters.map((requester) => (
@@ -70,7 +70,7 @@ class BookInfo extends Component {
             )}
           </section>
           <footer className="modal-card-foot">
-            {this.props.isRental && (
+            {!this.props.isRental && (
               <>
                 <button
                   className="button is-danger"
