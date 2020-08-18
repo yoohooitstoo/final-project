@@ -133,4 +133,6 @@ body {
   min-width: fit-content;
 }
 
-
+.accountSection {
+  margin-top: 75px;
+}

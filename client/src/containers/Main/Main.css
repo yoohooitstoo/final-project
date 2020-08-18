@@ -89,6 +89,10 @@ body {
   color: #fafbeb;
 }
 
+.nearby {
+  margin-top: 50px;
+}
+
 /* //for search form feature, in development */
 /* .field {
   border-radius: 10px;

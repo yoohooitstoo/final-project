@@ -35,7 +35,7 @@ class Account extends Component {
     return (
       <div>
         <Navbar />
-        <div className="section">
+        <div className="section accountSection">
           <section class="hero is-dark">
             <div class="hero-body">
               <div class="container">
