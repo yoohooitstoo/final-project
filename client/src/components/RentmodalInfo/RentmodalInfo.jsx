@@ -46,7 +46,7 @@ class RentmodalInfo extends Component {
             />
             <p className="title is-3">{this.book.title}</p>
             <br />
-            <p className="subtitle is-5">Author(s): {this.book.authors}</p>
+            <p className="subtitle is-5">Author(s): {this.book.authors.join(", ")}</p>
             <br />
             <p className="has-text-justified">
               <strong>Description:</strong> {this.book.description}
