@@ -3,10 +3,6 @@
   overflow-x: auto;
 }
 
-.modal {
-  z-index: 100;
-}
-
 .bookrow::-webkit-scrollbar {
   color: transparent;
 }

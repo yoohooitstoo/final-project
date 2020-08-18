@@ -1,0 +1,11 @@
+.navbar-link {
+    color: white
+}
+
+.label.is-large {
+    font-size: 3rem;
+}
+
+.a.navbar-link {
+    text-center: right;
+}

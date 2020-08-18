@@ -46,7 +46,9 @@ router.put("/renting/:id", async (req, res) => {
   }
 });
 
+
 module.exports = router;
+
 
 // Old routes
 
