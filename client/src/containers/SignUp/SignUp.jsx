@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./SignUp.css";
 // import UserContext from "../../utils/User";
 
 const SignUp = (props) => {
@@ -35,8 +36,8 @@ const SignUp = (props) => {
   //   render() {
   return (
     <div className="container">
-      <h1>Hello</h1>
-
+      <br />
+      <br />
       <div className="notification">
         <form onSubmit={handleSubmit}>
           <div className="field">
@@ -118,7 +119,6 @@ const SignUp = (props) => {
                 Sign Up
               </button>
             </p>
-          
 
             <Link to="/">
               <button className="button is-link">Home</button>
