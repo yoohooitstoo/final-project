@@ -100,7 +100,7 @@ class AddBook extends Component {
                 </div>
                 <div className="row">
                   <div className="col d-flex justify-content-start">
-                    Written By: {book.authors}
+                    Written By: {book.authors.join(", ")}
                   </div>
                 </div>
                 <div className="row">
