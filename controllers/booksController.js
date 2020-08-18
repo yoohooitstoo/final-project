@@ -4,13 +4,13 @@ const db = require('../models');
 module.exports = {
   findAll: function (req, res) {
     db.Book.find()
-      .populate('requesters')
+      .populate('requesters').populate("owner")
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
     db.Book.findById(req.params.id)
-      .populate('requesters')
+      .populate('requesters').populate("owner")
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -26,8 +26,8 @@ module.exports = {
       { $push: { requesters: req.body.userId } },
       { new: true }
     )
-
     .populate("requesters")
+    .populate("owner")
     .then((dbModel) => {
         // const requesters = dbModel
         res.json(dbModel);
