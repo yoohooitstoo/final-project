@@ -12,7 +12,7 @@ class Navbar extends Component {
         >
           <div className="navbar-brand">
             
-            <label className="label is-large">
+            <label className="label is-large ml-4">
               <i className="fas fa-book"></i> The Borrowers
             </label>
           </div>
