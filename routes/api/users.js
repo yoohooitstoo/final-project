@@ -111,6 +111,22 @@ router.put("/rent/:id", async (req, res) => {
   }
 });
 
+// router.put("/return/:id", async (req, res) => {
+//   try {
+//     console.log("Made it here");
+//     // console.log(req.query);
+//     let user = await User.findByIdAndUpdate(
+//       req.params.id,
+//       { $pop: { renting: 1 } },
+//       { new: true }
+//     );
+//     // console.log(user);
+//     res.json(user);
+//   } catch (ex) {
+//     res.json(ex);
+//   }
+// });
+
 router.delete("/:id", (req, res) => {
   User.findByIdAndRemove(req.params.id).then((user) => {
     res.json(user);

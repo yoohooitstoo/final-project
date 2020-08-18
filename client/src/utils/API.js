@@ -27,5 +27,13 @@ export default {
         console.log(id)
         console.log(book)
         return axios.put(`/api/users/rent/${id}`, {bookId: book})
-    }
+    },
+    bookAvailable: function(id, book) {
+        console.log(id)
+        console.log(book)
+        return axios.put(`api/users/return/${id}`, {bookId: book})
+    },
+    // bookReturn: function(id) {
+    //     return axios.put(`api/books/${id}`, {bookId})
+    // }
 }

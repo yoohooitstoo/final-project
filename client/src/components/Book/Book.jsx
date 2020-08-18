@@ -38,10 +38,10 @@ class Book extends Component {
         />
         <div className="middle">
           <button 
-          className="button is-link"
+          className="button is-outlined is-medium"
           onClick={() => this.toggleModal()}
           >
-            Rent Book
+            Book Info
           </button>
         </div>
         {this.state.showModal && <BookInfo book={this.book} onClose={this.toggleModal.bind(this)} />}
