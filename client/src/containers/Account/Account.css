@@ -3,6 +3,10 @@
   overflow-x: auto;
 }
 
+.modal {
+  z-index: 100;
+}
+
 .bookrow::-webkit-scrollbar {
   color: transparent;
 }
@@ -24,6 +28,7 @@
 .borrowrow {
   margin-top: 30px;
   overflow-x: auto;
+
 }
 
 .borrowrow::-webkit-scrollbar {
@@ -65,7 +70,7 @@
 .bookContainer {
   margin-left: 10px;
   margin-right: 10px;
-  z-index: 8;
+  z-index: 3;
 }
 
 .bookcover {
