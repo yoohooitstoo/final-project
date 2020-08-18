@@ -1,8 +1,7 @@
-.notification{
-    background-color: #c74 ;
-    background-blend-mode: lighten;
-}
 
-/* .signupbox {
+.formcontainer {
     background-color: hsl(0, 0%, 21%);
-} */
+    padding: 20px;
+    width: 75%;
+    border-radius: 10px;
+}
