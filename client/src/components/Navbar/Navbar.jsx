@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
+import "./Navbar.css";
 
 class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <p>Placeholder!</p>
+        <nav className="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+          <label className="label is-large ml-4">The Borrowers</label>
           </div>
 
+          <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/account">
+          Pages
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/account">
+           My Account Page
+          </a>
+      
+        </div>
+      </div>
+
+
           <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-              {/* <a class="navbar-item">My Library</a> */}
-
-              {/* <a class="navbar-item">Browse Books</a> */}
-
-            </div>
-
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="button">
-                  {/* <a class="button is-light">Log Out</a> */}
-                </div>
+            <div className="navbar-end">
+              <div className="navbar-item">
+                  <a className="button is-light" href="/">Log Out</a>
               </div>
             </div>
           </div>

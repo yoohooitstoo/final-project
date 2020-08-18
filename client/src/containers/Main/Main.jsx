@@ -12,20 +12,21 @@ class Main extends Component {
     allOwnedBooks: [],
   };
 
-  rentBook(book) {
-    const user = this.props.match.params;
-    // console.log(this.props.match.params)
-    API.requestToRent(book._id, user)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data._id);
-        // this.props.history.push(`/account/${res.data._id}`);
-      })
-      .catch((err) => console.log(err));
-  }
+  // rentBook(book) {
+  //   const user = this.props.match.params;
+  // //console.log(this.props.match.params)
+  // console.log("here")
+  //   API.requestToRent(book._id, user)
+  //     .then((res) => {
+  //       console.log(res);
+  //       console.log(res.data._id);
+  //       // this.props.history.push(`/account/${res.data._id}`);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   componentDidMount() {
-    // console.log(this.props.match);
+    console.log(this.props.match.params.id);
     API.getAllOwnedBooks().then((res) => {
       // console.log(res.data);
 
@@ -47,7 +48,7 @@ class Main extends Component {
           
           <div className="field">
             <label className="label is-large">Search for books around you</label>
-            <div className="control has-icons-left">
+            {/* <div className="control has-icons-left">
               <input
                 className="input"
                 type="text"
@@ -60,9 +61,9 @@ class Main extends Component {
               </span>
             </div>
             <div className="control">
-              <a className= "button is-success is-medium"
+              <a href="/#" className= "button is-success is-medium"
               onClick={this.handleSearchAPI}>Search</a>
-            </div>
+            </div> */}
 
           </div>
 

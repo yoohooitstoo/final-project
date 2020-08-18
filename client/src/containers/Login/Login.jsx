@@ -35,9 +35,10 @@ const Login = (props) => {
   // render() {
   return (
     <div className="container">
+         <br></br>
+         <br></br>
       <div className="notification">
         <form onSubmit={handleSubmit}>
-          Login Page that will take the user to their account
           <div className="field">
             <p className="control has-icons-left has-icons-right">
               <input

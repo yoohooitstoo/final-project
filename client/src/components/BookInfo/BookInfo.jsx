@@ -3,7 +3,7 @@ import "./BookInfo.css";
 import API from "../../utils/API";
 class BookInfo extends Component {
 state = {
-  allOwnedBooks : []
+  allOwnedBooks : [],
 }
 
   book = this.props.book;
@@ -75,6 +75,7 @@ state = {
             </button>
             <button
               className="button is-warning"
+              onClick={() => this.bookAvailable(this.book, this.book.requester)}
             >
               Book Returned
             </button>
