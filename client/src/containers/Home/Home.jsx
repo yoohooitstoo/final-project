@@ -24,14 +24,8 @@ const Home = () => {
         </p>
         <br />
         <div className="buttons is-centered">
-          <Link to="/login">
-            <button className="button is-primary">Login</button>
-          </Link>
-        </div>
-        <div className="buttons is-centered">
-          <Link to="/signup">
-            <button className="button is-link">Sign up</button>
-          </Link>
+          <a className="button is-primary" href="/login">Login</a>
+          <a className="button is-success" href="/signup">Sign up</a>
         </div>
       </div>
     </div>
