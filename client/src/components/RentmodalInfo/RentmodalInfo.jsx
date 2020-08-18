@@ -17,7 +17,7 @@ class RentmodalInfo extends Component {
     this.props.onClose();
 
     // Send email to book owner
-    window.location.href = `mailto:${book.owner.email}?subject=Rental%20Request%3A&body=Hello%20${book.owner.username}!%0D%0A%0D%0AI%20have%20sent%20a%20request%20to%20rent%20your%20book%2C%20${book.title}.%20Look%20forward%20to%20hearing%20from%20you%20soon!%0D%0A%0AThanks%2C%0D%0A%22YOUR SIGNATURE HERE%22`;
+    window.location.href = `mailto:${book.owner.email}?subject=Rental%20Request%3A%20${book.title}&body=Hello%20${book.owner.username}!%0D%0A%0D%0AI%20have%20sent%20a%20request%20to%20rent%20your%20book%2C%20${book.title}.%20Look%20forward%20to%20hearing%20from%20you%20soon!%0D%0A%0AThanks%2C%0D%0A%22YOUR SIGNATURE HERE%22`;
   }
 
   render() {

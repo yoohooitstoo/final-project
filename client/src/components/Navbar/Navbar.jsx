@@ -3,6 +3,7 @@ import './Navbar.css';
 
 class Navbar extends Component {
   render() {
+    console.log("NAV", window.location);
     return (
       <div>
         <nav
@@ -19,7 +20,7 @@ class Navbar extends Component {
 
           <div id="navbarBasicExample" class="navbar-menu">
             <div className="navbar-end is-link">
-                <a className="navbar-item is-light" href="/account">
+                <a className="navbar-item is-light" href="javascript:history.back()">
                   My Account Page
                 </a>
                 <a className="navbar-item is-light" href="/">
