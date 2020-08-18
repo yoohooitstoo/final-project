@@ -57,7 +57,7 @@ const SignUp = (props) => {
         </div>
         <label className="label is-medium">Email</label>
         <div className="field">
-          <div className="control has-icons-left has-icons-right">
+          <div className="control has-icons-left">
             <input
               className="input"
               id="email"

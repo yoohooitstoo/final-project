@@ -6,11 +6,11 @@ const Home = () => {
     <div className="container ">
       <br></br>
       <br></br>
-      <div className="notification is-dark home">
+      <div className="notification is-dark homediv">
         <label className="label is-large">
           <i className="fas fa-book"></i> The Borrowers
           </label>
-        <p className="is-light">
+        <p className="is-light is-medium">
           Have extra books lying around and want some new material? Our site
           allows you to post your books and borrow from your neighbors!
           You post your books and are able to search through books posted in
@@ -20,8 +20,8 @@ const Home = () => {
         </p>
         <br />
         <div className="buttons is-centered">
-          <a className="button is-success" href="/login">Login</a>
-          <a className="button is-success is-inverted is-outlined" id="signupbutton" href="/signup">Sign up</a>
+          <a className="button is-success is-medium" href="/login">Login</a>
+          <a className="button is-success is-medium is-inverted is-outlined" id="signupbutton" href="/signup">Sign up</a>
         </div>
       </div>
     </div>
