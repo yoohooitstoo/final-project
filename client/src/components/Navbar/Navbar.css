@@ -1,11 +1,11 @@
 .navbar-link {
-    color: white
+    color: #F5F5F5
 }
 
 .label.is-large {
     font-size: 3rem;
 }
 
-.a.navbar-link {
-    text-center: right;
+.navbar-item {
+    color: #F5F5F5
 }

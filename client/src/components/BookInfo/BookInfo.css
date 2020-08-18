@@ -6,6 +6,9 @@ width: 300px;
 height:450px;
 };
 
+.modal {
+  z-index: 10;
+}
 
 .modal-background {
   color: whitesmoke;
