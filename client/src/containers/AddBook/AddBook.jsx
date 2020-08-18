@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
+import Navbar from "../../components/Navbar/Navbar";
 ///testing bookinfo component
 // import BookInfo from '../../components/BookInfo/BookInfo';
 
@@ -55,7 +56,8 @@ class AddBook extends Component {
   render() {
     return (
       <div>
-        <div className="section">
+        <Navbar />
+        <div className="section search">
           <div className="box" id="searchBox">
             <div className="field">
               <label className="label">Search</label>
@@ -81,17 +83,16 @@ class AddBook extends Component {
           </div>
         </div>
 
-        <div className="section">
+        <div className="content">
           <div className="jumbotron">
             {this.state.booksSearched.map((book) => (
-              <div className="jumbotron">
-                <div className="row">
+              <div className="section books">
+                <div className="columns">
                   <div className="col d-flex justify-content-around">
                     <div>{book.title}</div>
                     <div>
-                      <button className="btn btn-secondary">View</button>
                       <button
-                        className="btn btn-primary"
+                        className="button is-success"
                         onClick={() => this.saveBook(book)}
                       >
                         Add to Library
@@ -101,7 +102,7 @@ class AddBook extends Component {
                 </div>
                 <div className="row">
                   <div className="col d-flex justify-content-start">
-                    Written By: {book.authors}
+                    Written By: {book.authors.join(", ")}
                   </div>
                 </div>
                 <div className="row">
