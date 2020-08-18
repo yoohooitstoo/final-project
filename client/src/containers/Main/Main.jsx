@@ -46,8 +46,8 @@ class Main extends Component {
         <div className="section">
 
           
-          <div className="field">
-            <label className="label is-large">Search for books around you</label>
+          {/* <div className="field">
+            <label className="label is-large">Search for books around you</label> */}
             {/* <div className="control has-icons-left">
               <input
                 className="input"
@@ -65,7 +65,7 @@ class Main extends Component {
               onClick={this.handleSearchAPI}>Search</a>
             </div> */}
 
-          </div>
+          {/* </div> */}
 
           <div className="container is-fluid bookContainer">
             <div className="columns bookrow level">
@@ -77,6 +77,17 @@ class Main extends Component {
             </div>
           </div>
           <div className="polygon"></div>
+          <div className= "container is-fluid browsehero">
+          <section class="hero is-dark">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">Browse books around you</h1>
+                <h2 class="subtitle">Request a book to contact the owner</h2>
+
+              </div>
+            </div>
+          </section>
+          </div>
         </div>
       </div>
     );
