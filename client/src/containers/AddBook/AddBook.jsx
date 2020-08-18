@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { searchResults } from "../../services/apiService";
 import "./AddBook.css";
+import Navbar from "../../components/Navbar/Navbar";
 ///testing bookinfo component
 // import BookInfo from '../../components/BookInfo/BookInfo';
 
@@ -55,7 +56,8 @@ class AddBook extends Component {
   render() {
     return (
       <div>
-        <div className="section">
+        <Navbar />
+        <div className="section search">
           <div className="box" id="searchBox">
             <div className="field">
               <label className="label">Search</label>
