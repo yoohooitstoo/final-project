@@ -34,7 +34,7 @@ This was our final project for the Georgia Tech, FullStack Flex Program.
 GoogleBooks API [https://developers.google.com/books]
 
 ## MIT_License
-Copyright (c) [2020] [Crystal Watkins, Danielle Byrne, Jared Porter, and Jennifer Daeumler]
+Copyright (c) [2020] [Stuart Scott, Crystal Watkins, Jared Porter, and Scott Griffin]
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
